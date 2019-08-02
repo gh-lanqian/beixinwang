@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/denglu2.css"/>
+		<script type="text/javascript" src="js/$function.js"></script>
+		<script type="text/javascript" src="js/cookietools.js"></script>
+	</head>
+	<body>
+		<div class="beixin">
+			<div class="bb">
+				<img src="img/19dfa0e4-2852-4500-afe4-b968fffac4ce.jpg" alt="" title="北新图书网">
+			</div>
+		</div>
+		<div class="dl-bt">
+			<img src="https://passport.bxmedia.net/img/78010d33-1350-4004-bdb0-a9c2ad1001fg.jpg" alt="">
+			<div class="dl-txt">
+				<div class="txt-t">
+					<h2>北新网用户登录</h2>
+					<p>请输入用户名和密码</p>
+					<label>用户名：</label><input class="txt-t-ip tp" placeholder="请输入手机号" name="userphone" maxlength="11" /><br/>
+					<label>密码：</label><input class="txt-t-ip tpas" type="password" name="userpass" /><br/>
+					<input class="dl-dl" type="button" value="登录" /><a href="forgetpassword.html">忘记密码？</a><br/>
+				</div>
+				<div class="txt-b">
+					<h1>还不是北新网用户？</h1>
+					<p>轻松注册，就可以方便购物！<a href="yanzheng.html">注册成为新用户</a></p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	getI(".dl-dl")[0].onclick=function(){
+		saveCookie("userphone",getI(".tp")[0].value,7);
+		saveCookie("userpass",getI(".tpas")[0].value,7);
+		window.location.href="index.html";
+	}
+</script>

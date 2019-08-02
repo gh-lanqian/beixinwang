@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>北新网-新华书店综合网购平台</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index-main.css"/>
+		<script type="text/javascript" src="js/$function.js"></script>
+		<link rel="import" href="head.html" id="page1"/>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<link rel="shortcut icon" href="img/bitbug_favicon.ico" /> 
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.write(page1.import.body.innerHTML);
+		</script>
+		<!-- <div class="header"></div>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			$(".header").load("head.html");
+		</script> -->
+		<script type="text/javascript">
+			getI(".shoppingclass")[0].onmouseover=function(){
+				getI(".dc")[0].style.display="block";
+			}
+			getI(".shoppingclass")[0].onmouseout=function(){
+				getI(".dc")[0].style.display="none";
+			}
+			getI(".dc")[0].onmouseover=function(){
+				getI(".dc")[0].style.display="block";
+			}
+			getI(".dc")[0].onmouseout=function(){
+				getI(".dc")[0].style.display="none";
+			}
+			function getI(str){
+				if(str.charAt(0)=="#"){
+					return document.getElementById(str.substring(1));
+				}else if(str.charAt(0)=="."){
+					return document.getElementsByClassName(str.substring(1));
+				}else{
+					return document.getElementsByTagName(str);
+				}
+			}
+		</script>
+		<div class="box1">
+			<div class="zhucediv">
+				<div class="zhu-lt">
+					<h2>请填写信息</h2>
+					<div class="inp">
+						<label>手机号码：</label><input maxlength="11" style="background: white; border: 0;" type="text" name="userphone" disabled="disabled" class="txt txtname" style="border: 0;"/><br/>
+						<label>密码：</label><input type="password" name="userpass" value="" class="txt1" style="width: 186px;"/><span></span><br/>
+						<label>密码确认：</label><input type="password" name=""  value="" class="txt txtagain" /><span></span><br/>
+						<span class="p1">密码强度</span><span class="co-sp s1"></span><span class="co-sp s1"></span><span class="co-sp s1"></span><span class="co-sp s2"></span><span class="co-sp s2"></span><span class="co-sp s2"></span><span class="co-sp s2"></span><span class="co-sp s3"></span><span class="co-sp s3"></span><span class="co-sp s3"></span><br/>
+						<input type="checkbox" name=""class="check" value="" /><span>我已阅读并同意<a href="" class="ccc">《北新网-新华书店综合网购平台用户服务协议》</a></span><br/>
+						<input type="button" name="" class="btn5" value="注册" />
+					</div>
+				</div>
+				<div class="zhu-rt">
+					<div class="zhu-rt-bt">
+						<span>我已经注册，现在就</span>
+						<span class="dd"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var perimeters = window.location.search;
+			perimeters = decodeURI(perimeters.substr(1).split('&')[0]);
+			// alert(perimeters)
+			// function getDatas(userphone){
+			// 	$.post("php/text2.php", {userphone:userphone},
+			// 		function(str){
+			// 			alert(str);
+			// 		});
+			// }
+			window.onload=function(){
+				getI(".txtname")[0].value=perimeters.substr(10);
+			}
+			//前端验证
+			getI(".txt1")[0].onblur=function(){
+				if(this.value==""){
+					this.nextElementSibling.className="pass-show";
+					this.nextElementSibling.innerHTML="请输入密码!";
+				}else if(check(this.value,"userpass")){
+					this.nextElementSibling.innerHTML="";
+					this.nextElementSibling.className="pass-show2";
+				}else{
+					this.nextElementSibling.className="pass-show";
+					this.nextElementSibling.innerHTML="请输入8到20位字母数字组合的密码!";
+				}
+			}
+			getI(".txtagain")[0].onblur=function(){
+				if(this.value==""){
+					this.nextElementSibling.className="pass-show";
+					this.nextElementSibling.innerHTML="请再次输入密码!";
+				}else{
+					if(this.value==getI(".txt1")[0].value){
+						this.nextElementSibling.innerHTML="";
+						this.nextElementSibling.className="pass-show2";
+					}else{
+						this.nextElementSibling.className="pass-show";
+						this.nextElementSibling.innerHTML="密码与上边输入不同!";
+					} 	
+				}
+			}
+			getI(".btn5")[0].onclick=function(){
+				if(getI(".txt1")[0].value==""){
+					getI(".txt1")[0].nextElementSibling.className="pass-show";
+					getI(".txt1")[0].nextElementSibling.innerHTML="请输入密码!";
+					return;
+				}else if(check(getI(".txt1")[0].value,"userpass")){
+					getI(".txt1")[0].nextElementSibling.innerHTML="";
+					getI(".txt1")[0].nextElementSibling.className="pass-show2";
+				}else{
+					getI(".txt1")[0].nextElementSibling.className="pass-show";
+					getI(".txt1")[0].nextElementSibling.innerHTML="请输入8到20位字母数字组合的密码!";
+					return;
+				}
+				if(getI(".txtagain")[0].value==""){
+					getI(".txtagain")[0].nextElementSibling.className="pass-show";
+					getI(".txtagain")[0].nextElementSibling.innerHTML="请再次输入密码!";
+					return;
+				}else{
+					if(getI(".txtagain")[0].value==getI(".txt1")[0].value){
+						getI(".txtagain")[0].nextElementSibling.innerHTML="";
+						getI(".txtagain")[0].nextElementSibling.className="pass-show2";
+					}else{
+						getI(".txtagain")[0].nextElementSibling.className="pass-show";
+						getI(".txtagain")[0].nextElementSibling.innerHTML="密码与上边输入不同!";
+						return;
+					} 	
+				}
+				if($(".check")[0].checked==false){
+					alert("请同意并接受协议");
+					return;
+				}
+				afterText(getI(".txt1")[0],getI(".txtname")[0])
+				
+			}
+			function afterText(userpass,userphone){
+				$.post("php/text1.php", {userpass:userpass,
+				userphone:userphone
+				},
+				function(str){
+						if(str==1){
+							window.location.href="denglu.html";
+						}else{
+							 alert("注册失败！请重新输入内容");
+						}
+					});
+			}
+			function check(str,type){
+				switch(type){
+					case "userpass":var r =/\w{8,20}$/;break;
+					case "userphone":var r =/^1[3-9]\d{9}$/;break;
+				}
+				return r.test(str);
+			}
+			//密码强度
+			$(".s1").css("backgroundColor","")
+			$(".s2").css("backgroundColor","")
+			$(".s3").css("backgroundColor","")
+			getI(".txt1")[0].oninput = function(){
+				
+				$(".s1").css("backgroundColor","")
+				$(".s2").css("backgroundColor","")
+				$(".s3").css("backgroundColor","")
+			
+				var password=getI(".txt1")[0];
+				if(password.value.length>0){
+					if(password.value.length<=6 || isNaN(password.value)==false){
+						$(".s1").css("backgroundColor","red")
+					}else if(password.value.length>6 && hasLetter(password.value) && hasSpec(password.value) && hasNum(password.value)){
+						$(".s1").css("backgroundColor","springgreen")
+						$(".s2").css("backgroundColor","springgreen")
+						$(".s3").css("backgroundColor","springgreen")
+					}else{
+						$(".s1").css("backgroundColor","yellow")
+						$(".s2").css("backgroundColor","yellow")
+					}
+				}	
+			}
+			
+			function hasLetter(pass){
+				for(var i=0;i<pass.length;i++){
+					var code = pass.charCodeAt(i);
+					if((code>=65 && code<=90)||(code>=97 && code<=122)){
+						 return true;
+					}
+				}
+				return false;
+			}
+			function hasNum(pass){
+				for(var i=0;i<pass.length;i++){
+					var code = pass.charCodeAt(i);
+					if(code>=48 && code<=57){
+						 return true;
+					}
+				}
+				return false;
+			}		
+			function hasSpec(pass){
+				var specs = ["$","#","!"];
+				for(var i=0;i<pass.length;i++){
+					if(specs.indexOf(pass.charAt(i))>-1){
+						 return true;
+					}
+				}
+				return false;
+			}	
+		</script>
+		<div class="denglu-bt">
+			<div class="denglu">
+				<div class="dl-top">
+					<b>登录</b>
+					<span class="delete"></span>
+				</div>
+				<div class="dl-me">
+					<div class="dl-txt">
+						<div class="txt-t">
+							<h2>北新网用户登录</h2>
+							<p>请输入用户名和密码</p>
+							<label>用户名：</label><input class="txt-t-ip" placeholder="请输入手机号" /><br/>
+							<label>密码：</label><input class="txt-t-ip" type="" placeholder="" /><br/>
+							<input class="dl-dl" type="button" value="登录" /><a href="forgetpassword.html">忘记密码？</a><br/>
+						</div>
+						<div class="txt-b">
+							<h1>还不是北新网用户？</h1>
+							<p>轻松注册，就可以方便购物！<a href="yanzheng.html">注册成为新用户</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="corver1"></div>
+		</div>
+		<script type="text/javascript">
+			//点击登录显示
+			getI(".dd")[0].onclick=function(event){
+				var evt=window.event || event;
+				var helight1=document.body.clientHeight || document.documentElement.clientHeight
+				getI(".denglu-bt")[0].style.display="block";
+				getI(".denglu")[0].style.display="block";
+				getI(".denglu-bt")[0].style.height=`${helight1}px`;
+			}
+			//点击X隐藏
+			getI(".delete")[0].onclick=function(){
+				getI(".denglu-bt")[0].style.display="none";
+				getI(".denglu")[0].style.display="none";
+			}
+			//鼠标移入
+			getI(".dl-top")[0].onmouseover=function(){
+				getI(".dl-top")[0].style.cursor="move";
+			}
+			getI(".delete")[0].onmouseover=function(){
+				getI(".delete")[0].style.cssText=`
+					background-position:-51px -7px;
+					transition:all .1s;
+				`;
+			}
+			getI(".delete")[0].onmouseout=function(){
+				getI(".delete")[0].style.cssText=`
+					background-position:-31px -7px;
+					transition:all .1s;
+				`;
+			}
+			//点击拖动
+			var num1
+			var num2
+			getI(".dl-top")[0].onmousedown=function(event){
+				getI(".corver1")[0].style.display="block";
+				var evt=window.event || event;
+				var offsetX=evt.offsetX;
+				var offsetY=evt.offsetY;
+				document.body.onmousemove=function(event){
+					var evt=window.event || event;
+					num1=evt.clientX-offsetX
+					num2=evt.clientY-offsetY
+					getI(".corver1")[0].style.left=`${num1}px`;
+					getI(".corver1")[0].style.top=`${num2}px`;
+				}
+			}
+			document.body.onmouseup=function(){
+				document.body.onmousemove=null;
+				getI(".denglu")[0].style.left=`${num1}px`;
+				getI(".denglu")[0].style.top=`${num2}px`;
+					getI(".corver1")[0].style.display="none";	
+			}
+			getI(".delete")[0].onmousedown=function(event){
+				var evt=window.event || event;
+				evt.stopPropagation()
+			}
+		</script>
+			<!-- foot -->
+		<div class="foot"></div>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			$(".foot").load("foot.html");
+		</script>
+	</body>

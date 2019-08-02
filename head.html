@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/denglu.css"/>
+		<script type="text/javascript" src="js/$function.js"></script>
+	</head>
+	<body>
+		<div class="topz">
+			<div class="top">
+				<p>您好，欢迎来到北新网-新华书店综合网购平台！<span>[<a href="" class="dl">登录</a>]</span><span>[<a href="yanzheng.html">免费注册</a>]</span></p>
+				<ul class="ullis">
+					<li><a href="">我的订单</a></li>
+					<li class="lia1"><a href="">会员中心</a><span class="navspan"></span>
+						<ul class="uls uls1">
+							<li><a href="" title="会员首页">会员首页</a></li>
+							<li><a href="">我的积分</a></li>
+							<li><a href="">我的收藏</a></li>
+						</ul>
+					</li>
+					<li><a href="">商家入驻</a></li>
+					<li class="lia2"><a href="" title="客户服务">客户服务</a><span class="navspan"></span>
+						<ul class="uls uls2">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">在线客服</a></li>
+							<li><a href="">意见建议</a></li>
+						</ul>
+					</li>
+					<li class="li1">北新生活馆<span class="navspan"></span>
+					<div class="box1">
+						<span></span>
+						<img src="img/bf327-5ffb-4810-bd12-e0bc4c0a283.jpg" alt="">
+						<p>北新网微店</p>
+					</div>
+					</li>
+					<li class="li2">手机北新<span class="navspan"></span>
+					<div class="box2">
+						<span></span>
+						<img src="img/a0832-a6c9-40b7-a77a-30a8d813e80.jpg" alt="">
+						<p>北新网APP</p>
+						<img src="img/a5eae-5e52-4952-8dfb-7f59e1252d7.jpg" alt="">
+						<p>北新网读书APP</p>
+					</div>
+					</li>
+					<li class="li3">关注北新<span class="navspan"></span>
+					<div class="box3">
+						<span></span>
+						<img src="img/5608c-4fbb-4cda-bf6a-3035a2bcb10.jpg" alt="">
+						<p>北新网微信号</p>
+						<img src="img/daeac-f320-4d90-968d-0d27b016649.jpg" alt="">
+						<p>北新读书微信号</p>
+					</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="denglu-bt">
+			<div class="denglu">
+				<div class="dl-top">
+					<b>登录</b>
+					<span class="delete"></span>
+				</div>
+				<div class="dl-me">
+					<div class="dl-txt">
+						<div class="txt-t">
+							<h2>北新网用户登录</h2>
+							<p>请输入用户名和密码</p>
+							<label>用户名：</label><input class="txt-t-ip" placeholder="请输入手机号" /><br/>
+							<label>密码：</label><input class="txt-t-ip" type="" placeholder="" /><br/>
+							<input class="dl-dl" type="button" value="登录" /><a href="forgetpassword.html">忘记密码？</a><br/>
+						</div>
+						<div class="txt-b">
+							<h1>还不是北新网用户？</h1>
+							<p>轻松注册，就可以方便购物！<a href="yanzheng.html">注册成为新用户</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="corver1"></div>
+		</div>
+		<script type="text/javascript">
+			//点击登录显示
+			getI(".dl")[0].onclick=(event)=>{
+				var evt=window.event || event;
+				evt.preventDefault();
+				var helight1=document.body.clientHeight || document.documentElement.clientHeight
+				getI(".denglu-bt")[0].style.display="block";
+				getI(".denglu")[0].style.display="block";
+				getI(".denglu-bt")[0].style.height=`${helight1}px`;
+			}
+			//点击X隐藏
+			getI(".delete")[0].onclick=()=>{
+				getI(".denglu-bt")[0].style.display="none";
+				getI(".denglu")[0].style.display="none";
+			}
+			//鼠标移入
+			getI(".dl-top")[0].onmouseover=()=>{
+				getI(".dl-top")[0].style.cursor="move";
+			}
+			getI(".delete")[0].onmouseover=()=>{
+				getI(".delete")[0].style.cssText=`
+					background-position:-51px -7px;
+					transition:all .1s;
+				`;
+			}
+			getI(".delete")[0].onmouseout=()=>{
+				getI(".delete")[0].style.cssText=`
+					background-position:-31px -7px;
+					transition:all .1s;
+				`;
+			}
+			//点击拖动
+			var num1
+			var num2
+			getI(".dl-top")[0].onmousedown=function(event){
+				getI(".corver1")[0].style.display="block";
+				var evt=window.event || event;
+				var offsetX=evt.offsetX;
+				var offsetY=evt.offsetY;
+				document.body.onmousemove=function(event){
+					var evt=window.event || event;
+					num1=evt.clientX-offsetX
+					num2=evt.clientY-offsetY
+					getI(".corver1")[0].style.left=`${num1}px`;
+					getI(".corver1")[0].style.top=`${num2}px`;
+				}
+			}
+			document.body.onmouseup=function(){
+				document.body.onmousemove=null;
+				getI(".denglu")[0].style.left=`${num1}px`;
+				getI(".denglu")[0].style.top=`${num2}px`;
+					getI(".corver1")[0].style.display="none";	
+			}
+			getI(".delete")[0].onmousedown=function(event){
+				var evt=window.event || event;
+				evt.stopPropagation()
+			}
+			function getI(str){
+				if(str.charAt(0)=="#"){
+					return document.getElementById(str.substring(1));
+				}else if(str.charAt(0)=="."){
+					return document.getElementsByClassName(str.substring(1));
+				}else{
+					return document.getElementsByTagName(str);
+				}
+			}
+			</script>
+		<div class="topmz">
+			<div class="topm">
+				<img src="img/19dfa0e4-2852-4500-afe4-b968fffac4ce.jpg" alt="" class="imgs" title="首页LOGO">
+				<div class="topm-box">
+					<div class="cover"></div>
+					<div class="topm-div1">
+						<span class="search1">商品搜索</span>
+						<span class="search2">店铺搜索</span>
+					</div>
+					<div class="topm-div2"><input class="btnleft1" type="text" value="请输入搜索关键字"><input style="display:block;" class="btnleft2" type="text" value="请输入搜索关键字"></div><input class="btnright" type="button" value="搜索">
+					<div class="nav">
+						<p>热门搜索 :&nbsp;</p>
+						<ul class="navlist">
+							<li><a href="" title="都挺好">都挺好</a></li>
+							<li><a href="" title="夏目友人帐">夏目友人帐</a></li>
+							<li><a href="" title="流浪地球">流浪地球</a></li>
+							<li><a href="" title="蒙曼品最美唐诗">蒙曼品最美唐诗</a></li>
+							<li><a href="" title="危险的维纳斯">危险的维纳斯</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="shopping"><a href="">购物车</a>
+				<span class="num"></span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			getI(".search1")[0].onclick=function(){
+				this.style.borderBottom=0;
+				this.nextElementSibling.style.borderBottom=`1px solid #d1d1d1`;
+				this.nextElementSibling.style.color="#333333";
+				this.style.color="red";
+				this.parentNode.nextElementSibling.lastElementChild.style.display="none";
+				this.parentNode.nextElementSibling.firstElementChild.style.display="block";
+			}
+			getI(".search2")[0].onclick=function(){
+				this.style.borderBottom=0;
+				this.previousElementSibling.style.borderBottom=`1px solid #d1d1d1`;
+				this.previousElementSibling.style.color="#333333";
+				this.style.color="red";
+				this.parentNode.nextElementSibling.lastElementChild.style.display="block";
+			}
+			getI(".btnleft1")[0].onfocus=function(){
+				this.value='';
+			}
+			getI(".btnleft2")[0].onfocus=function(){
+				this.value='';
+			}
+			function getI(str){
+				if(str.charAt(0)=="#"){
+					return document.getElementById(str.substring(1));
+				}else if(str.charAt(0)=="."){
+					return document.getElementsByClassName(str.substring(1));
+				}else{
+					return document.getElementsByTagName(str);
+				}
+			}
+		</script>
+		<div class="topbz">
+			<div class="topb">
+				<div class="shoppingclassz">
+					<div class="shoppingclass"><a href="">商品分类</a></div>
+					<div class="dc">
+						<div class="dc-inner">
+							<div class="item"><a href="" title="社科馆"><span><img src="img/b8a4c516-4a3d-4d46-94ed-41fce881ab59.png" alt=""></span><label>社科馆</label></a></div>
+							<div class="item"><a href="" title="文艺馆"><span><img src="img/d411e112-16e4-4c20-b7aa-ccdb14fd607d.png" alt=""></span><label>文艺馆</label></a></div>
+							<div class="item"><a href="" title="科技馆"><span><img src="img/ba7883d5-d94b-488b-91e6-f72bf2d91994.png" alt=""></span><label>科技馆</label></a></div>
+							<div class="item"><a href="" title="教育馆"><span><img src="img/744e1652-14b3-4d49-825b-2fa4c4744826.png" alt=""></span><label>教育馆</label></a></div>
+							<div class="item"><a href="" title="青少馆"><span><img src="img/ccf669f1-74c0-4386-aabf-09151843adf0.png" alt=""></span><label>青少馆</label></a></div>
+							<div class="item"><a href="" title="生活馆"><span><img src="img/c387be6c-9325-457f-9685-c3628f00d6c6.png" alt=""></span><label>生活馆</label></a></div>
+							<div class="item"><a href="" title="财经馆"><span><img src="img/cf11c93e-3358-4f49-931a-40acc54d3598.png" alt=""></span><label>财经馆</label></a></div>
+							<div class="item"><a href="" title="进口图书"><span><img src="img/84af3471-c55b-46c7-8bf7-3b6a7892967c.png" alt=""></span><label>进口图书</label></a></div>
+							<div class="item"><a href="" title="生活百货"><span><img src="img/dc017-d7e2-44b9-9aab-5f5d1aa4091.png" alt=""></span><label>生活百货</label></a></div>
+							<div class="item"><a href="" title="工艺美术"><span><img src="img/42d9b-67a4-49cb-a69c-bf92327394d.png" alt=""></span><label>工艺美术</label></a></div>
+						</div>
+						<div class="all-list"><a href="" title="全部商品"><span><img src="img/inner-icon08.png" alt=""></span><label>全部商品</label></a></div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">小说<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国古典小说"><b class="aaa">|</b>中国古典小说</a>
+										<a href="#" title="中国近现代小说"><b class="aaa">|</b>中国近现代小说</a>
+										<a href="#" title="中国当代小说"><b class="aaa">|</b>中国当代小说</a>
+										<a href="#" title="四大名著"><b class="aaa">|</b>四大名著</a>
+										<a href="#" title="港台小说"><b class="aaa">|</b>港台小说</a>
+										<a href="#" title="网络小说"><b class="aaa">|</b>网络小说</a>
+										<a href="#" title="影视小说"><b class="aaa">|</b>影视小说</a>
+										<a href="#" title="外国小说"><b class="aaa">|</b>外国小说</a>
+										<a href="#" title="科幻/悬疑/推理"><b class="aaa">|</b>科幻/悬疑/推理</a>
+										<a href="#" title="惊悚/恐怖"><b class="aaa">|</b>惊悚/恐怖</a>
+										<a href="#" title=" 武侠/玄幻"><b class="aaa">|</b> 武侠/玄幻</a>
+										<a href="#" title="军事"><b class="aaa">|</b>军事</a>
+										<a href="#" title="社会/都市"><b class="aaa">|</b>社会/都市</a>
+										<a href="#" title="世界名著"><b class="aaa">|</b>世界名著</a>
+										<a href="#" title="情感/家庭/婚姻"><b class="aaa">|</b>情感/家庭/婚姻</a>
+										<a href="#" title="宫廷"><b class="aaa">|</b>宫廷</a>
+										<a href="#" title="乡土"><b class="aaa">|</b>乡土</a>
+										<a href="#" title="职场"><b class="aaa">|</b>职场</a>
+										<a href="#" title="财经"><b class="aaa">|</b>财经</a>
+										<a href="#" title="官场"><b class="aaa">|</b>官场</a>
+										<a href="#" title="历史"><b class="aaa">|</b>历史</a>
+										<a href="#" title="作品集"><b class="aaa">|</b>作品集</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="文学理论、评论与研究"><b class="aaa">|</b>文学理论、评论与研究</a>
+										<a href="#" title="文学史"><b class="aaa">|</b>文学史</a>
+										<a href="#" title="作品集"><b class="aaa">|</b>作品集</a>
+										<a href="#" title="名家作品"><b class="aaa">|</b>名家作品</a>
+										<a href="#" title="民间文学"><b class="aaa">|</b>民间文学</a>
+										<a href="#" title="散文/随笔/书信"><b class="aaa">|</b>散文/随笔/书信</a>
+										<a href="#" title="诗歌词曲"><b class="aaa">|</b>诗歌词曲</a>
+										<a href="#" title="中国文学"><b class="aaa">|</b>中国文学</a>
+										<a href="#" title="外国文学"><b class="aaa">|</b>外国文学</a>
+										<a href="#" title="影视文学"><b class="aaa">|</b>影视文学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">青春文学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="校园"><b class="aaa">|</b>校园</a>
+										<a href="#" title="爱情/情感"><b class="aaa">|</b>爱情/情感</a>
+										<a href="#" title="叛逆/成长"><b class="aaa">|</b>叛逆/成长</a>
+										<a href="#" title="悬疑/惊悚"><b class="aaa">|</b>悬疑/惊悚</a>
+										<a href="#" title="娱乐/偶像 "><b class="aaa">|</b>娱乐/偶像 </a>
+										<a href="#" title="爆笑/无厘头"><b class="aaa">|</b>爆笑/无厘头</a>
+										<a href="#" title="玄幻/科幻/新武侠"><b class="aaa">|</b>玄幻/科幻/新武侠</a>
+										<a href="#" title="大陆原创"><b class="aaa">|</b>大陆原创</a>
+										<a href="#" title="港台青春文学"><b class="aaa">|</b>港台青春文学</a>
+										<a href="#" title="各国青春文学"><b class="aaa">|</b>各国青春文学</a>
+										
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">传记<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="人物传记"><b class="aaa">|</b>人物传记</a>
+										<a href="#" title="领袖首脑"><b class="aaa">|</b>领袖首脑</a>
+										<a href="#" title="历史人物"><b class="aaa">|</b>历史人物</a>
+										<a href="#" title="经典传记"><b class="aaa">|</b>经典传记</a>
+										<a href="#" title="历代帝王"><b class="aaa">|</b>历代帝王</a>
+										<a href="#" title="军事人物"><b class="aaa">|</b>军事人物</a>
+										<a href="#" title="政治人物"><b class="aaa">|</b>政治人物</a>
+										<a href="#" title="财经人物"><b class="aaa">|</b>财经人物</a>
+										<a href="#" title="宗教人物"><b class="aaa">|</b>宗教人物</a>
+										<a href="#" title="女性人物"><b class="aaa">|</b>女性人物</a>
+										<a href="#" title="体坛之星"><b class="aaa">|</b>体坛之星</a>
+										<a href="#" title="建筑师/设计师"><b class="aaa">|</b>建筑师/设计师</a>
+										<a href="#" title="艺术家"><b class="aaa">|</b>艺术家</a>
+										<a href="#" title="文学家"><b class="aaa">|</b>文学家</a>
+										<a href="#" title="文娱明星"><b class="aaa">|</b>文娱明星</a>
+										<a href="#" title="科学家"><b class="aaa">|</b>科学家</a>
+										<a href="#" title="学者"><b class="aaa">|</b>学者</a>
+										<a href="#" title="自传"><b class="aaa">|</b>自传</a>
+										<a href="#" title="人物合集"><b class="aaa">|</b>人物合集</a>
+										<a href="#" title="社会百相"><b class="aaa">|</b>社会百相</a>
+										<a href="#" title="家族研究与传记"><b class="aaa">|</b>家族研究与传记</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">艺术<span class="bbb"></span></a></dt>
+										<dd class="rows-txt">
+											<a target="_blank" href="#" title="艺术理论与评论"><b class="aaa">|</b>艺术理论与评论</a>
+											<a target="_blank" href="#" title="鉴赏收藏"><b class="aaa">|</b>鉴赏收藏</a>
+											<a target="_blank" href="#" title="绘画"><b class="aaa">|</b>绘画</a>
+											<a target="_blank" href="#" title="连环画"><b class="aaa">|</b>连环画</a>
+											<a target="_blank" href="#" title="书法与篆刻"><b class="aaa">|</b>书法与篆刻</a>
+											<a target="_blank" href="#" title="摄影"><b class="aaa">|</b>摄影</a>
+											<a target="_blank" href="#" title="动画"><b class="aaa">|</b>动画</a>
+											<a target="_blank" href="#" title="影视"><b class="aaa">|</b>影视</a>
+											<a target="_blank" href="#" title="雕塑"><b class="aaa">|</b>雕塑</a>
+											<a target="_blank" href="#" title="艺术类考试"><b class="aaa">|</b>艺术类考试</a>
+											<a target="_blank" href="#" title="音乐"><b class="aaa">|</b>音乐</a>
+											<a target="_blank" href="#" title="舞蹈"><b class="aaa">|</b>舞蹈</a>
+											<a target="_blank" href="#" title="舞台艺术戏剧"><b class="aaa">|</b>舞台艺术戏剧</a>
+											<a target="_blank" href="#" title="艺术史"><b class="aaa">|</b>艺术史</a>
+											<a target="_blank" href="#" title="各国艺术概况"><b class="aaa">|</b>各国艺术概况</a>
+											<a target="_blank" href="#" title="设计"><b class="aaa">|</b>设计</a>
+											<a target="_blank" href="#" title="民间艺术"><b class="aaa">|</b>民间艺术</a>
+											<a target="_blank" href="#" title="建筑"><b class="aaa">|</b>建筑</a>
+											<a target="_blank" href="#" title="艺术品拍卖"><b class="aaa">|</b>艺术品拍卖</a>
+											<a target="_blank" href="3" title="艺术辞典与工具书"><b class="aaa">|</b>艺术辞典与工具书</a>
+											<a target="_blank" href="#" title="工艺美术"><b class="aaa">|</b>工艺美术</a>
+										</dd>
+									</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">3社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">4社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">5社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">6社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">7社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">8社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">9社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+						<div class="dropdown-layer"  >
+							<div class="p-left">
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">10社会科学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="人类学"><b class="aaa">|</b>人类学</a>
+										<a href="#" title="社会结构和社会关系"><b class="aaa">|</b>社会结构和社会关系</a>
+										<a href="#" title="社会生活与社会问题"><b class="aaa">|</b>社会生活与社会问题</a>
+										<a href="#" title="社会学"><b class="aaa">|</b>社会学</a>
+										<a href="#" title="社会科学丛书、文集"><b class="aaa">|</b>社会科学丛书、文集</a>
+										<a href="#" title="社会科学文献检索"><b class="aaa">|</b>社会科学文献检索</a>
+										<a href="#" title="社会科学理论"><b class="aaa">|</b>社会科学理论</a>
+										<a href="#" title="人口学"><b class="aaa">|</b>人口学</a>
+										<a href="#" title="人才学"><b class="aaa">|</b>人才学</a>
+										<a href="#" title="民族学"><b class="aaa">|</b>民族学</a>
+										<a href="#" title="社会关系与社会问题"><b class="aaa">|</b>社会关系与社会问题</a>
+										<a href="#" title="社会调查"><b class="aaa">|</b>社会调查</a>
+										<a href="#" title="社会保障"><b class="aaa">|</b>社会保障</a>
+										<a href="#" title="社会科学总论"><b class="aaa">|</b>社会科学总论</a>
+										<a href="#" title="公共关系"><b class="aaa">|</b>公共关系</a>
+										<a href="#" title="社区"><b class="aaa">|</b>社区</a>
+										<a href="#" title="统计学"><b class="aaa">|</b>统计学</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">哲学/宗教<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="中国哲学"><b class="aaa">|</b>中国哲学</a>
+										<a href="#" title="哲学理论与流派"><b class="aaa">|</b>哲学理论与流派</a>
+										<a href="#" title="马克思哲学"><b class="aaa">|</b>马克思哲学</a>
+										<a href="#" title="思维科学"><b class="aaa">|</b>思维科学</a>
+										<a href="#" title="哲学经典著作"><b class="aaa">|</b>哲学经典著作</a>
+										<a href="#" title="东西方哲学"><b class="aaa">|</b>东西方哲学</a>
+										<a href="#" title="美学"><b class="aaa">|</b>美学</a>
+										<a href="#" title="逻辑学"><b class="aaa">|</b>逻辑学</a>
+										<a href="#" title="伦理学"><b class="aaa">|</b>伦理学</a>
+										<a href="#" title="宗教"><b class="aaa">|</b>宗教</a>
+										<a href="#" title="佛教"><b class="aaa">|</b>佛教</a>
+										<a href="#" title="道教"><b class="aaa">|</b>道教</a>
+										<a href="#" title="基督教"><b class="aaa">|</b>基督教</a>
+										<a href="#" title="天主教"><b class="aaa">|</b>天主教</a>
+										<a href="#" title="犹太教"><b class="aaa">|</b>犹太教</a>
+										<a href="#" title="伊斯兰教"><b class="aaa">|</b>伊斯兰教</a>
+										<a href="#" title="宗教普及读物"><b class="aaa">|</b>宗教普及读物</a>
+										<a href="#" title="宗教经典著作"><b class="aaa">|</b>宗教经典著作</a>
+										<a href="#" title="佛教原典"><b class="aaa">|</b>佛教原典</a>
+										<a href="#" title="佛教研究著作"><b class="aaa">|</b>佛教研究著作</a>
+										<a href="#" title="藏传佛教"><b class="aaa">|</b>藏传佛教</a>
+										<a href="#" title="佛教名家作品"><b class="aaa">|</b>佛教名家作品</a>
+										<a href="#" title="宗教术数"><b class="aaa">|</b>宗教术数</a>
+										<a href="#" title="宗教艺术"><b class="aaa">|</b>宗教艺术</a>
+										<a href="#" title="宗教理论与概况"><b class="aaa">|</b>宗教理论与概况</a>
+										<a href="#" title="宗教神话与传说"><b class="aaa">|</b>宗教神话与传说</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">历史<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">										
+										<a href="#" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a href="#" title="中国史"><b class="aaa">|</b>中国史</a>
+										<a href="#" title="世界史"><b class="aaa">|</b>世界史</a>
+										<a href="#" title="历史常识"><b class="aaa">|</b>历史常识</a>
+										<a href="#" title="文物考古"><b class="aaa">|</b>文物考古</a>
+										<a href="#" title="风俗习惯"><b class="aaa">|</b>风俗习惯</a>
+										<a href="#" title="史学理论"><b class="aaa">|</b>史学理论</a>
+										<a href="#" title="历史热点"><b class="aaa">|</b>历史热点</a>
+										<a href="#" title="史家名著"><b class="aaa">|</b>史家名著</a>
+										<a href="#" title="逸闻野史"><b class="aaa">|</b>逸闻野史</a>
+										<a href="#" title="历史工具书"><b class="aaa">|</b>历史工具书</a>
+										<a href="#" title="民族史"><b class="aaa">|</b>民族史</a>
+										<a href="#" title="通俗说史"><b class="aaa">|</b>通俗说史</a>
+										<a href="#" title="地方史志"><b class="aaa">|</b>地方史志</a>
+										<a href="#" title="历史研究与评论"><b class="aaa">|</b>历史研究与评论</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="#">国学/典籍<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a href="#" title="书目辞典"><b class="aaa">|</b>书目辞典</a>
+										<a href="#" title="古籍善本"><b class="aaa">|</b>古籍善本</a>
+										<a href="#" title="国学普及读物"><b class="aaa">|</b>国学普及读物</a>
+										<a href="#" title="经部"><b class="aaa">|</b>经部</a>
+										<a href="#" title="史部"><b class="aaa">|</b>史部</a>
+										<a href="#" title="子部"><b class="aaa">|</b>子部</a>
+										<a href="#" title="集部"><b class="aaa">|</b>集部</a>
+										<a href="#" title="四库全书"><b class="aaa">|</b>四库全书</a>
+										<a href="#" title="国学名家"><b class="aaa">|</b>国学名家</a>
+										<a href="#" title="线装书"><b class="aaa">|</b>线装书</a>
+									</dd>
+								</dl>
+								<dl class="l-rows">
+								    <dt class="rows-title"><a href="#">政治/军事<span class="bbb"></span></a></dt>
+								        <dd class="rows-txt">
+								            <a target="_blank" href="#" title="马克思主义理论"><b class="aaa">|</b>马克思主义理论</a>
+								            <a target="_blank" href="#" title="中国共产党"><b class="aaa">|</b>中国共产党</a>
+								            <a target="_blank" href="#" title="领袖著作"><b class="aaa">|</b>领袖著作</a>
+								            <a target="_blank" href="#" title="政治经典著作"><b class="aaa">|</b>政治经典著作</a>
+								            <a target="_blank" href="#" title="中国政治"><b class="aaa">|</b>中国政治</a>
+								            <a target="_blank" href="#" title="世界政治"><b class="aaa">|</b>世界政治</a>
+								            <a target="_blank" href="#" title="外交、国际关系"><b class="aaa">|</b>外交、国际关系</a>
+								            <a target="_blank" href="#" title="政治理论"><b class="aaa">|</b>政治理论</a>
+								            <a target="_blank" href="#" title="党政读物"><b class="aaa">|</b>党政读物</a>
+								            <a target="_blank" href="#" title="各国共产党"><b class="aaa">|</b>各国共产党</a>
+								            <a target="_blank" href="#" title="各国政治"><b class="aaa">|</b>各国政治</a>
+								            <a target="_blank" href="#" title="政治热点"><b class="aaa">|</b>政治热点</a>
+								            <a target="_blank" href="#" title="政治考试和教材"><b class="aaa">|</b>政治考试和教材</a>
+								            <a target="_blank" href="#" title="经典军事著作"><b class="aaa">|</b>经典军事著作</a>
+								            <a target="_blank" href="#" title="军事"><b class="aaa">|</b>军事</a>
+								            <a target="_blank" href="#" title="中国军事"><b class="aaa">|</b>中国军事</a>
+								            <a target="_blank" href="#" title="世界军事"><b class="aaa">|</b>世界军事</a>
+								            <a target="_blank" href="#" title="军事理论"><b class="aaa">|</b>军事理论</a>
+								            <a target="_blank" href="#" title="军事技术"><b class="aaa">|</b>军事技术</a>
+								            <a target="_blank" href="3" title="战略战术战役"><b class="aaa">|</b>战略战术战役</a>
+								            <a target="_blank" href="#" title="武器装备"><b class="aaa">|</b>武器装备</a>
+								            <a target="_blank" href="#" title="反恐"><b class="aaa">|</b>反恐</a>
+								            <a target="_blank" href="#" title="军事教材"><b class="aaa">|</b>军事教材</a>
+								            <a target="_blank" href="#" title="军事文学"><b class="aaa">|</b>军事文学</a>
+								            <a target="_blank" href="#" title="军事史"><b class="aaa">|</b>军事史</a>
+								        </dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">法律<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="#" title="理论法学"><b class="aaa">|</b>理论法学</a>
+										<a target="_blank" href="#" title="刑法"><b class="aaa">|</b>刑法</a>
+										<a target="_blank" href="#" title="民法"><b class="aaa">|</b>民法</a>
+										<a target="_blank" href="#" title="司法案例与司法解释"><b class="aaa">|</b>司法案例与司法解释</a>
+										<a target="_blank" href="" title="司法考试"><b class="aaa">|</b>司法考试</a>
+										<a target="_blank" href="" title="商法"><b class="aaa">|</b>商法</a>
+										<a target="_blank" href="" title="国家法"><b class="aaa">|</b>国家法</a>
+										<a target="_blank" href="" title="法律教材与法律考试"><b class="aaa">|</b>法律教材与法律考试</a>
+										<a target="_blank" href="" title="经济法"><b class="aaa">|</b>经济法</a>
+										<a target="_blank" href="" title="国际法"><b class="aaa">|</b>国际法</a>
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="法律史"><b class="aaa">|</b>法律史</a>
+										<a target="_blank" href="" title="司法制度"><b class="aaa">|</b>司法制度</a>
+										<a target="_blank" href="" title="法学文集"><b class="aaa">|</b>法学文集</a>
+										<a target="_blank" href="" title="法律工具书"><b class="aaa">|</b>法律工具书</a>
+										<a target="_blank" href="" title="法律文书写作"><b class="aaa">|</b>法律文书写作</a>
+										<a target="_blank" href="" title="法律普及读物"><b class="aaa">|</b>法律普及读物</a>
+										<a target="_blank" href="" title="法律法规"><b class="aaa">|</b>法律法规</a>
+										<a target="_blank" href="" title="法律实务"><b class="aaa">|</b>法律实务</a>
+										<a target="_blank" href="" title="行政法"><b class="aaa">|</b>行政法</a>
+										<a target="_blank" href="" title="诉讼法"><b class="aaa">|</b>诉讼法</a>
+										<a target="_blank" href="" title="犯罪学"><b class="aaa">|</b>犯罪学</a>
+										<a target="_blank" href="" title="刑事侦查学"><b class="aaa">|</b>刑事侦查学</a>
+										<a target="_blank" href="" title="法医学"><b class="aaa">|</b>法医学</a>
+										<a target="_blank" href="" title="网络法律法规"><b class="aaa">|</b>网络法律法规</a>
+										<a target="_blank" href="" title="司法鉴定"><b class="aaa">|</b>司法鉴定</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">心理学<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="经典著作"><b class="aaa">|</b>经典著作</a>
+										<a target="_blank" href="" title="人格心理学"><b class="aaa">|</b>人格心理学</a>
+										<a target="_blank" href="" title="人类心理学"><b class="aaa">|</b>人类心理学</a>
+										<a target="_blank" href="" title="发生心理学"><b class="aaa">|</b>发生心理学</a>
+										<a target="_blank" href="" title="应用心理学"><b class="aaa">|</b>应用心理学</a>
+										<a target="_blank" href="" title="心理健康"><b class="aaa">|</b>心理健康</a>
+										<a target="_blank" href="" title="青少年心理辅导"><b class="aaa">|</b>青少年心理辅导</a>
+										<a target="_blank" href="" title="心理学理论"><b class="aaa">|</b>心理学理论</a>
+										<a target="_blank" href="" title="心理学研究方法"><b class="aaa">|</b>心理学研究方法</a>
+										<a target="_blank" href="" title="心理学通俗读物"><b class="aaa">|</b>心理学通俗读物</a>
+										<a target="_blank" href="" title="心理过程与心理状态"><b class="aaa">|</b>心理过程与心理状态</a>
+										<a target="_blank" href="" title="大众心理学"><b class="aaa">|</b>大众心理学</a>
+										<a target="_blank" href="" title="社会心理学"><b class="aaa">|</b>社会心理学</a>
+										<a target="_blank" href="" title="变态心理学"><b class="aaa">|</b>变态心理学</a>
+										<a target="_blank" href="" title="生理心理学"><b class="aaa">|</b>生理心理学</a>
+									</dd>
+								    </dl>
+								<dl class="l-rows">
+									<dt class="rows-title"><a href="">文化<span class="bbb"></span></a></dt>
+									<dd class="rows-txt">
+										<a target="_blank" href="" title="方针政策及其阐述"><b class="aaa">|</b>方针政策及其阐述</a>
+										<a target="_blank" href="" title="文化产业、文化市场"><b class="aaa">|</b>文化产业、文化市场</a>
+										<a target="_blank" href="" title="文化研究"><b class="aaa">|</b>文化研究</a>
+										<a target="_blank" href="" title="文化理论"><b class="aaa">|</b>文化理论</a>
+										<a target="_blank" href="" title="文化史"><b class="aaa">|</b>文化史</a>
+										<a target="_blank" href="" title="文化评述"><b class="aaa">|</b>文化评述</a>
+										<a target="_blank" href="" title="地域文化"><b class="aaa">|</b>地域文化</a>
+										<a target="_blank" href="" title="传统文化"><b class="aaa">|</b>传统文化</a>
+										<a target="_blank" href="" title="民俗文化"><b class="aaa">|</b>民俗文化</a>
+										<a target="_blank" href="" title="世界各国文化"><b class="aaa">|</b>世界各国文化</a>
+										<a target="_blank" href="" title="礼仪文化"><b class="aaa">|</b>礼仪文化</a>
+									</dd>
+								</dl>
+							</div>
+							<div class="p-right">
+								<div class="top_title">推荐品牌</div>
+								<div class="top_info frameEdit" frameinfo="bf_top_right_brand1">
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/9/8/15/dca6c-0f8f-4062-9762-2100029b386.jpg" alt="人民出版社" title="人民出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/7/31/92/288fc-596f-4fb0-8d27-70bc77d6ddb.jpg" alt="时代华语" title="时代华语">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/10/2d4c3-64e7-4181-94fb-71e91743aac.jpg" alt="重庆出版社" title="重庆出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/8/48/d7554-581f-4850-9153-088f539c74c.jpg" alt="紫云远景" title="紫云远景">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/11/73/24302-0e7c-46fe-b3cb-4e3d1e70709.jpg" alt="大象出版社" title="大象出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/18/52/a168a-3e25-453a-857a-4c10a6fbb4f.jpg" alt="中央编译出版社" title="中央编译出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/23/8/3d259-af5c-4c33-a890-c29be580259.jpg" alt="社科文献出版社" title="社科文献出版社">
+								            </a>
+								    </div>
+								    <div class="info_tab">
+								            <a href="#">
+								                <img src="http://images.bxmedia.net/upload/1/2017/8/31/99/283cf-fbff-4d60-b549-7f0e8452b2b.jpg" alt="新世界青春" title="新世界青春">
+								            </a>
+								    </div> 
+							</div>
+						</div>
+						</div>
+					</div>
+					<ul class="topnav">
+						<li><a href="index.html" title="首页">首页</a></li>
+						<li><span>/</span><a href="" title="图书首页">图书首页</a></li>
+						<li><span>/</span><a href="" title="图书排行榜">图书排行榜</a></li>
+						<li><span>/</span><a href="" title="北新读书">北新读书</a></li>
+						<li><span>/</span><a href="" title="特卖汇">特卖汇</a></li>
+						<li><span>/</span><a href="" title="活动专场">活动专场</a></li>
+						<li><span>/</span><a href="" title="北京发行集团">北京发行集团</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var items=getI(".item");
+			for(let i=0;i<items.length;i++){
+				items[i].onmouseover=function(){
+					getI(".dropdown-layer")[i].style.display="block";
+					items[i].style.backgroundColor="#000000";
+				}
+				items[i].onmouseout=function(){
+					getI(".dropdown-layer")[i].style.display="none";
+					items[i].style.backgroundColor="#3d3d3d";
+				}
+				getI(".dropdown-layer")[i].onmouseover=function(){
+					getI(".dropdown-layer")[i].style.display="block";
+				}
+				getI(".dropdown-layer")[i].onmouseout=function(){
+					getI(".dropdown-layer")[i].style.display="none";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>北新网-新华书店综合网购平台</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index-main.css"/>
+		<script type="text/javascript" src="js/$function.js"></script>
+		<script type="text/javascript" src="js/cookietools.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/dianji.js"></script>
+		<link rel="shortcut icon" href="img/bitbug_favicon.ico" /> 
+	</head>
+	<body>
+		<div class="header"></div>
+		<script type="text/javascript">
+			$(".header").load("head.html");
+		</script>
+		<!-- 轮播图 -->
+		<div class="focus">
+			<div id="bannerz">
+				<div id="banner">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/banner.js"></script>
+
+			<div class="tab-info">
+				<div class="tab-z">
+					<div class="tad-top">
+						<div class="tab-tit">
+							<div class="tab-tit1" style="background-color: white;"><a href="" title="商城公告">商城公告</a></div>
+							<div class="tab-tit1"><a href="" title="新书书讯">新书书讯</a></div>
+						</div>
+						<div class="tab-cont">
+							<div class="tab-panel">
+								<a href="" title="北京台湖出版物会展贸易中心 多元化经营发展中心招商公告">北京台湖出版物会展贸易中心 多元化经营发展中心招商公告</a>
+								<a href="" title="关于变更电子发票的公告">关于变更电子发票的公告</a>
+								<a href="" title="包邮政策调整公告">包邮政策调整公告</a>
+							</div>
+							<div class="tab-panel" style="display: none;">
+								<a href="" title="北京台湖出版物会展贸易中心 多元化经营发展中心招商公告">《脊梁-献给钱学森和他的战友们》</a>
+								<a href="" title="《就说你和他们一样》">《就说你和他们一样》</a>
+								<a href="" title="《你若安好 便是晴天：林徽因传》">《你若安好 便是晴天：林徽因传》</a>
+								<a href="" title="《暗夜传灯人》">《暗夜传灯人》</a>
+							</div>
+						</div>
+					</div>
+					<div class="tad-bottom">
+						<a href="" title="显微镜下的大明"><img src="http://images.bxmedia.net/upload/1/2019/3/7/5/b3abb-bfe9-4d78-b4c0-ed609e75e6b.jpg" alt=""></a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var tits=getI(".tab-tit1")
+			for(let i=0;i<tits.length;i++){
+				tits[i].onclick=function(){
+					tits[i].style.backgroundColor="white";
+					tits[1-i].style.backgroundColor="#f2f2f2";
+					getI(".tab-panel")[i].style.display="block";
+					getI(".tab-panel")[1-i].style.display="none";
+				}
+				tits[i].firstElementChild.onclick=function(event){
+					var evt=window.event || event;
+					evt.preventDefault();
+				}
+			}
+		</script>
+		<!-- main-->
+		<div class="main-z">
+			<div class="main">
+				<div class="recommend">
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/69/5a4ff-6d17-4142-ad22-1fd15722ed8.png" alt=""></a></div>
+					<div class="item-imgs item-imgs2"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/46/b8f15-d1e6-45a3-a080-6f65ffab661.png" alt=""></a></div>
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/99/692bd-3c0c-4b67-aefc-5173d437379.png" alt=""></a></div>
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/37/c9b6d-31a5-4c46-9198-e9073f3c0f4.png" alt=""></a></div>
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/94/0efb2-2c56-47c0-84de-f85c7ed3218.png" alt=""></a></div>
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/8/81bba-11b5-48a6-86f9-c2e99754bef.png" alt=""></a></div>
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/87/a1ca1-cc9c-4b69-8906-aab063d46e0.png" alt=""></a></div>
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/56/d6f2c-ce25-4678-983c-ab73cb08661.png" alt=""></a></div>
+					<div class="item-imgs"><a href=""><img src="http://images.bxmedia.net/upload/1/2018/3/13/17/49428-2a5c-439c-a4c5-93abb0b7f11.png" alt=""></a></div>
+				</div>
+				<div class="floor-01">
+					<div class="m-top">
+						<div class="mt">
+							<h5>读书汇</h5>
+						</div>
+						<div class="mc">
+							<a href="" class="one-tab one-tab1">北京图书大厦</a>
+							<a href="" class="one-tab">王府井书店</a>
+							<a href="" class="one-tab">中关村图书大厦</a>
+							<a href="" class="one-tab">亚运村图书大厦</a>
+							<a href="" class="one-tab">外文书店</a>
+							<a href="" class="one-tab">中国书店</a>
+						</div>
+					</div>
+					<div class="m-bot">
+						<div class="m-bot-lt">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2019/3/8/70/c94fd-e79e-4af0-a11d-a09cbfbe38f.png" alt="流浪地球"></a>
+						</div>
+						<div class="m-bot-rt" style="display: block;">
+						<div class="mrt-top">
+								<div class="mrt-top-img"><img src="http://images.bxmedia.net/upload/1/2016/3/16/2a8b5fa0-aa1e-4330-aa9f-3b459dc4a230.jpg" alt="" width="80" height="80"></div>
+								<a href="" class="name">北京图书大厦</a>
+								<p>北京图书大厦位于长安街畔的政治、文化、经济核心区，地处北京著名的西单商业街，与金融街相距仅数百米。交通便利，中外游客与购物市民往来穿梭，地理位置得天独厚。大厦营业面积16000余平方米，被称为“北京市文化地标”。</p>
+						</div>	
+						<div class="div"></div>
+						
+						<script type="text/javascript">
+							$(function(){
+								$(".div").dianji({
+									
+								})
+							});
+						</script>
+
+						</div>
+						<div class="m-bot-rt">
+							<div class="mrt-top">
+								<div class="mrt-top-img"><img src="http://images.bxmedia.net/upload/1/2016/3/15/a4b77a6d-1b95-45b2-b713-66ec89a54ec9.png" alt="" width="80" height="80"></div>
+								<a href="" class="name">王府井书店</a>
+								<p>王府井书店王府井书店坐落于王府井大街南口，设计突出文化品位，力求营造出一个宣传陈列错落有致，环境优雅亲切的购书氛围，致力于为出版社提供一个全新的展示场所，为广大读者提供一个优美舒适的购书环境。</p>
+							</div>
+							<div class="div1"></div>
+
+							<!-- <script type="text/javascript">
+								$(function(){
+									$(".div1").dianji({
+										
+									});
+								});
+							</script> -->
+						</div>
+						<div class="m-bot-rt">
+							<div class="mrt-top">
+								<div class="mrt-top-img"><img src="http://images.bxmedia.net/upload/1/2016/3/16/3868ce0b-1fbe-47fc-9c4f-2d5be54f5c87.jpg" alt="" width="80" height="80"></div>
+								<a href="" class="name">中关村图书大厦</a>
+								<p>中关村图书大厦坐落在享有“中国硅谷”美誉的中关村，营业面积近万平方米，汇集35余万种高、精、专、特、新图书、音像制品等，为读者提供优雅、明快的购书环境和人性化的高水准服务，彰显“行业先导，国际一流”的独特品质。</p>
+							</div>
+							<div class="div2"></div>
+							
+							<!-- <script type="text/javascript">
+								$(function(){
+									$(".div2").dianji({
+										
+									});
+								});
+							</script> -->
+						</div>
+						<div class="m-bot-rt">
+							<div class="mrt-top">
+								<div class="mrt-top-img"><img src="http://images.bxmedia.net/upload/1/2016/3/16/b05709a4-d17c-4aca-b4d5-5cdc89883ce4.jpg" alt="" width="80" height="80"></div>
+								<a href="" class="name">亚运村图书大厦</a>
+								<p>亚运村图书大厦地处亚奥核心区，坐落于"第五大道"精品购物广场。大厦营业面积万余平米，立足亚奥、面向京北，常备在售商品近30万种，同时引进教育培训、文化用品、时尚数码等多元化经营项目。</p>
+							</div>
+							<div class="div3"></div>
+							
+							<!-- <script type="text/javascript">
+								$(function(){
+									$(".div3").dianji({
+										
+									});
+								});
+							</script> -->
+						</div>
+						<div class="m-bot-rt">
+							<div class="mrt-top">
+								<div class="mrt-top-img"><img src="http://images.bxmedia.net/upload/1/2016/4/25/89/09094-f74d-4b4c-9720-235d8a8bf4b.png" alt="" width="80" height="80"></div>
+								<a href="" class="name">外文书店</a>
+								<p>北京市外文书店是我国最大的经销国内外正版外文书刊、音像制品、外语教材和工具书的国有文化企业，成为向世界介绍中国，传播中国文化的窗口。</p>
+							</div>
+							<div class="div4"></div>
+							
+							<!-- <script type="text/javascript">
+								$(function(){
+									$(".div4").dianji({
+										
+									});
+								});
+							</script> -->
+						</div>
+						<div class="m-bot-rt">
+							<div class="mrt-top">
+								<div class="mrt-top-img"><img src="http://images.bxmedia.net/upload/1/2016/4/25/73/287b2-e08d-4fe3-8673-6132fdfdc92.png" alt="" width="80" height="80"></div>
+								<a href="" class="name">中国书店</a>
+								<p>中国书店北京雁翅楼店是第一家市属24小时书店。该项目建设分东西两个区域，面积1100平方米，具有图书展示、线上阅读、订购、开办展览、文化讲座等功能。</p>
+							</div>
+							<div class="div5"></div>
+							
+							<!-- <script type="text/javascript">
+								$(function(){
+									$(".div5").dianji({
+										
+									});
+								});
+							</script> -->
+						</div>
+					</div>
+				</div>
+				<div class="floor-amd">
+					<a href=""><img src="http://images.bxmedia.net/upload/1/2019/3/4/32/83320-f644-421b-a09c-4a75aba73c4.jpg" alt=""></a>
+				</div>
+				<div class="floor-02">
+					<div class="m-top">
+						<div class="mt">
+							<h5>北新读书</h5>
+						</div>
+						<div class="mc mc-1 mc1">
+							<a href="" class="one-tab2 one-tab1">音视频</a>
+							<a href="" class="one-tab2">新书</a>
+						</div>
+						<div class="right">
+							<a href="">更多</a>
+						</div>
+					</div>
+					<div class="mc-bt">
+						<div class="mc-bt-lt1">
+							<div class="mc-left">
+								<div class="mc-top">
+									<a href=""><img src="http://img.bxmedia.net/material/news/img/212x140/2017/09/20170929092928zoIS.jpg" alt=""></a>
+									<p><a href="">北京图书大厦给你不一</a></p>
+								</div>
+								<ul class="mc-botm">
+									<li><a href="" title="读书让生活出彩|阅读的故事">读书让生活出彩|阅读的故事</a></li>
+									<li><a href="" title="读书让生活出彩|2017北京书市亮点">读书让生活出彩|2017北京书市亮点</a></li>
+									<li><a href="" title="读书让生活出彩|如何做到有效阅读">读书让生活出彩|如何做到有效阅读</a></li>
+									<li><a href="" title="读书让生活出彩|如何选一本喜欢的图书">读书让生活出彩|如何选一本喜欢的图书</a></li>
+								</ul>
+							</div>
+							
+							
+						</div>
+						<div class="mc-bt-rt">
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/08/201708011441263ciU.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170928151447cYSc.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170928162123rHdK.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170928153529SVHU.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170928151744lOZz.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170929092818ropI.jpg" ></a></div>
+						</div>
+					</div>
+					<div class="mc-bt mc-bt1">
+						<div class="mc-bt-lt1">
+							<div class="mc-left">
+								<div class="mc-top">
+									<a href=""><img src="http://img.bxmedia.net/material/news/img/212x140/2017/08/201708151506182goi.jpg" alt=""></a>
+									<p><a href="">关于好好吃饭的法则</a></p>
+								</div>
+								<ul class="mc-botm">
+									<li><a href="" title="畅销德国十年的《小安东的故事》">畅销德国十年的《小安东的故事》</a></li>
+									<li><a href="" title="让今天的孩子在未来的职业生涯中更有竞争力">让今天的孩子在未来的职业生涯中更有竞争力</a></li>
+									<li><a href="" title="将美味和营养完美结合，教您变身大厨">将美味和营养完美结合，教您变身大厨</a></li>
+									<li><a href="" title="75道经典粤菜，你想学么？">75道经典粤菜，你想学么？</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="mc-bt-rt">
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170913141741EXkb.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/08/20170801115555zJW8.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/08/20170828151536ADpj.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170913143844OymN.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/09/20170913144348hf0L.jpg" ></a></div>
+							<div class="rt-item1"><a href=""><img src="http://img.bxmedia.net/material/news/img/320x166/2017/08/201708281522313Fop.jpg" ></a></div>
+						</div>
+					</div>
+				</div>
+				<div class="floor-03">
+					<div class="m-top">
+						<div class="mt">
+							<h5>乐生活</h5>
+						</div>
+						<div class="mc mc1">
+							<a href="" class="one-tab3 one-tab1">乐生活乐淘</a>
+							<a href="" class="one-tab3">体育用品</a>
+							<a href="" class="one-tab3">家居用品</a>
+						</div>
+					</div>
+					<div class="mc-bt">
+						<div class="mc-bt-lt">
+							<div class="mc-lt-pic">
+								<a href=""><img src="http://images.bxmedia.net/upload/1/2017/8/21/22/7517a-5c77-4d9d-9fe8-bd7b39ddfd3.png" alt=""></a>
+								<ul class="uls3">
+									<li><a href="">北京漆雕</a></li>
+									<li><a href="">翡翠摆件</a></li>
+									<li><a href="">翡翠饰品</a></li>
+									<li><a href="">和田玉</a></li>
+									<li><a href="">运动男装</a></li>
+									<li><a href="">运动女装</a></li>
+									<li><a href="">运动器械</a></li>
+									<li><a href="">运动户外</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="mc-bt-rt1">
+							<div class="rt-item"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2016/4/25/27/71b82-a60a-4424-80b2-97ea4473a1b.jpg" ></a></div>
+							<div class="rt-item rt-item2"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2016/4/25/7/7e580-b540-4481-9cbb-a7fafb7045f.jpg" ></a></div>
+							<div class="rt-item"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2016/4/25/51/c03eb-fc07-4ddd-8a9d-09f182b4c1c.jpg" ></a></div>
+							<div class="rt-item"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2016/4/25/43/321f2-bf23-4b54-8ef3-19483d11134.jpg" ></a></div>
+							<div class="rt-item"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2017/8/21/45/3a67a-1fc5-4651-9a8a-4a2393a16a3.png" ></a></div>
+							<div class="rt-item rt-item2"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2017/8/21/42/2a003-1f95-4378-ba39-960b96dfad2.png" ></a></div>
+							<div class="rt-item"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2016/4/25/60/4fec9-cb02-4479-ac49-36e3b5c402b.png" ></a></div>
+							<div class="rt-item"><a href="" title="促销"><img src="http://images.bxmedia.net/upload/1/2017/8/21/78/7028a-0ef1-443b-ac59-f81c18e94c9.png" ></a></div>
+						</div>
+						<div class="mc-bt-rt1"   style="display: none;">
+							<div class="btn left"><</div>
+							<div class="btn right">></div>
+							<div class="mrt-bot">
+								<div class="mrt-bots">
+									<div class="box">
+											<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/0/dbfee-9aec-4d25-901a-2b91444f958_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男装 篮球 针织夹克 NBA篮球茄克 NBA FAN GEAR A95416</div>
+												<div class="price"><span>￥347.0</span><label class="lab">￥699.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/98/9e38e-113a-4772-b285-e10dc65b622_160X160.jpg" ></div>
+												<div class="title">Adidas 三叶草 女装 短袖上衣 TREFOIL TEE SLA FASHION A08253</div>
+												<div class="price"><span>￥170.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/37/03ef3-e977-461c-99e4-141cd05e407_160X160.jpg" ></div>
+												<div class="title">Nike 耐克 男装 训练 短袖紧身服826592-010</div>
+												<div class="price"><span>￥206.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/51/eff3b-62a9-4cfe-9c74-4df902ad417_160X160.jpg" ></div>
+												<div class="title">Puma 彪马 男装训练基础系列针织运动长裤82561404</div>
+												<div class="price"><span>￥146.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>						
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/87/6598a-1173-4111-87a4-b0fca93dcd3_160X160.jpg" ></div>
+												<div class="title">阿迪达斯 adidas 球类 球 656927</div>
+												<div class="price"><span>￥131.0</span><label class="lab">￥199.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/79/da5d2-d9fd-4782-a363-2b0e4ba791d_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男鞋 跑步 男子跑步鞋 CLIMAHEAT B24469</div>
+												<div class="price"><span>￥681.0</span><label class="lab">￥1099.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/001/AB3131_05_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男装 足球 CON16训练长裤 CONDIVO AB3131</div>
+												<div class="price"><span>￥197.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/005/AA5512_02_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男装 篮球 篮球图案T恤 AA5512</div>
+												<div class="price"><span>￥144.0</span><label class="lab">￥249.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/0/dbfee-9aec-4d25-901a-2b91444f958_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男装 篮球 针织夹克 NBA篮球茄克 NBA FAN GEAR A95416</div>
+												<div class="price"><span>￥347.0</span><label class="lab">￥699.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/98/9e38e-113a-4772-b285-e10dc65b622_160X160.jpg" ></div>
+												<div class="title">Adidas 三叶草 女装 短袖上衣 TREFOIL TEE SLA FASHION A08253</div>
+												<div class="price"><span>￥170.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/37/03ef3-e977-461c-99e4-141cd05e407_160X160.jpg" ></div>
+												<div class="title">Nike 耐克 男装 训练 短袖紧身服826592-010</div>
+												<div class="price"><span>￥206.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/51/eff3b-62a9-4cfe-9c74-4df902ad417_160X160.jpg" ></div>
+												<div class="title">Puma 彪马 男装训练基础系列针织运动长裤82561404</div>
+												<div class="price"><span>￥146.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/87/6598a-1173-4111-87a4-b0fca93dcd3_160X160.jpg" ></div>
+												<div class="title">阿迪达斯 adidas 球类 球 656927</div>
+												<div class="price"><span>￥131.0</span><label class="lab">￥199.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/79/da5d2-d9fd-4782-a363-2b0e4ba791d_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男鞋 跑步 男子跑步鞋 CLIMAHEAT B24469</div>
+												<div class="price"><span>￥681.0</span><label class="lab">￥1099.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/001/AB3131_05_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男装 足球 CON16训练长裤 CONDIVO AB3131</div>
+												<div class="price"><span>￥197.0</span><label class="lab">￥299.0</label></div>
+											</a>
+										</div>
+										<div class="list">
+											<a href="" title="">
+												<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/005/AA5512_02_160X160.jpg" ></div>
+												<div class="title">Adidas 阿迪达斯 男装 篮球 篮球图案T恤 AA5512</div>
+												<div class="price"><span>￥144.0</span><label class="lab">￥249.0</label></div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mc-bt-rt1" style="display: none;">
+							<div class="btn left"><</div>
+							<div class="btn right">></div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+					<script type="text/javascript">
+						var index=4;
+						var size=$('.box').children().size();
+						var listWidth=$('.list').width();
+						$(".right").click(function(){
+							index++;
+							change();
+						})
+						$(".left").click(function(){
+							index--;
+							change();
+						})
+						function change(){
+							let slideWidth=-1*listWidth*index;
+							$(".box").animate({ 
+								 'left':slideWidth+'px'
+							}, 500);
+							 if(index>=size-4){
+							    $('.box').animate({'left':-listWidth*4+'px'},0);// 图片切换过去   
+							    index=4;
+							}
+							 if(index<1){
+							    //要注意在执行下面这段函数之前，已经切换到图片C了。
+							    $('.box').animate({'left':-(size-8)*listWidth+'px'},0);
+							    // (肉眼看不到),但实际已经切换到图片C了
+							    index=size-8;
+							}
+						}
+				</script>
+				<div class="floor-amd">
+					<a href=""><img src="http://images.bxmedia.net/upload/1/2019/3/4/53/457db-801d-4485-a118-e1e5eca3528.jpg" alt=""></a>
+				</div>
+				<div class="floor-04">
+					<div class="mt">
+						<h5>战略合作伙伴</h5>
+					</div>
+					<div class="mc-b">
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2018/7/12/36/36918-e4ff-4a55-bdb9-fef6452615b.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/27/24/48d73-c836-4d63-8e5b-c904cd90457.png" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/5/25/36/35ffb-83d3-4042-a223-74359596ac5.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/2/12/1be2c-1841-4e85-a1d7-548a681a580.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/8/31/50/9085d-7d54-4447-9ffa-7dc9e506fed.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/9/36/3aa78-8a8d-4669-919e-3b3ac5d7144.png" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/12/78/6f0c1-8483-4238-a5fc-531c590e551.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/30/76/db697-82d0-4bd7-b828-d83ce8bcd62.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/13/69/a2803-3454-4f74-b959-e753e05d54f.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/27/83/a904f-07e0-4827-a497-dcc23e7c655.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/28/10/127e3-4a40-49c5-9210-193a9251818.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/16/26/1bac2-474b-4cdc-b5d8-e49fa4a8f1a.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/20/80/19c6d-43f8-40f3-a916-1059501c746.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/6/23/39/5e211-c5dd-4173-9f0c-b521fac33e7.jpg" alt=""></a>
+						</div>
+						<div class="mc-items">
+							<a href=""><img src="http://images.bxmedia.net/upload/1/2017/7/6/93/5b909-28be-47e0-94c9-42f54051450.jpg" alt=""></a>
+						</div>
+					</div>
+				</div>
+				<div class="floor-amd">
+					<a href=""><img src="http://images.bxmedia.net/upload/1/2019/3/4/74/f46b1-1a60-4087-a330-2f6c354a1e8.jpg" alt=""></a>
+				</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			var str=getI(".one-tab")
+			for(let i=0;i<str.length;i++){
+				str[i].onmouseover=function(){
+					for(let i=0;i<str.length;i++){
+						str[i].style.cssText=`
+						color: #666666;
+						font-weight: 100;
+						border-bottom:0;
+						`;
+						getI(".m-bot-rt")[i].style.display="none";
+						
+					}
+					str[i].style.cssText=`
+					font-weight: 900;
+					color: #1a1a1a;
+					border-bottom: 2px solid #fce14f;
+					`;
+					getI(".m-bot-rt")[i].style.display="block";
+				}
+			}
+			var str2=getI(".one-tab3")
+			for(let i=0;i<str2.length;i++){
+				str2[i].onmouseover=function(){
+					for(let i=0;i<str2.length;i++){
+						str2[i].style.cssText=`
+						color: #666666;
+						font-weight: 100;
+						border-bottom:0;
+						`;
+						getI(".mc-bt-rt1")[i].style.display="none";
+	
+					}
+					str2[i].style.cssText=`
+					font-weight: 900;
+					color: #1a1a1a;
+					border-bottom: 2px solid #64d1cc;
+					`;
+					getI(".mc-bt-rt1")[i].style.display="block";
+
+				}
+			}
+			var str1=getI(".one-tab2")
+			for(let i=0;i<str1.length;i++){
+				str1[i].onmouseover=function(){
+					for(let i=0;i<str1.length;i++){
+						str1[i].style.cssText=`
+						color: #666666;
+						font-weight: 100;
+						border-bottom:0;
+						`;
+					}
+					str1[i].style.cssText=`
+					font-weight: 900;
+					color: #1a1a1a;
+					border-bottom: 2px solid #64d1cc;
+					`;
+					// for(let i=0;i<str1.length;i++){
+					// 	getI(".mc-bt")[i].style.left=`${0-i*1200}px`;
+					// 	getI(".mc-bt")[1-i].style.left=`${1200-i*1200}px`;
+					// 	getI(".mc-bt")[i].style.transition=`all 1s`;
+					// }
+					if(i==0){
+						getI(".mc-bt")[0].style.left=0;
+						getI(".mc-bt")[1].style.left=`1200px`;
+						getI(".mc-bt")[0].style.transition=`all 1s`;
+						getI(".mc-bt")[1].style.transition=`all 1s`;
+					}
+					if(i==1){
+						getI(".mc-bt")[0].style.left=`-1200px`;
+						getI(".mc-bt")[1].style.left=0;
+						getI(".mc-bt")[0].style.transition=`all 1s`;
+						getI(".mc-bt")[1].style.transition=`all 1s`;
+					}
+				}
+			}
+		</script>
+		<!-- foot -->
+		<div class="foot"></div>
+		<script type="text/javascript">
+			$(".foot").load("foot.html");
+		</script>
+	</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		new BannerPlay({
+				width: 796,
+				height: 451,
+				douSize:10,
+				douIsCircle:false,
+				timeSpeace:3000,
+				imgs:["http://images.bxmedia.net/upload/1/2019/7/1/2/644fd-e72b-4f68-962c-e0f27f5212a.jpg","http://images.bxmedia.net/upload/259/2019/7/4/29/a4848-07eb-4770-86a7-2498093c2e1.jpg"]
+				},getI("#banner"),getI("#bannerz"))
+		}
+		
+		// let userphone=getCookie("userphone");
+		// if(userphone){
+		// 	getI(".top")[0].children[0].innerHTML=`[<a href="" class="dl" style="color:red;">${userphone}</a>]您好，欢迎来到北新网-新华书店综合网购平台！<span>[<a href="" class="back">退出</a>]</span>`;
+		// }else{
+		// 	getI(".top")[0].children[0].innerHTML=`您好，欢迎来到北新网-新华书店综合网购平台！<span>[<a href="" class="dl">登录</a>]</span><span>[<a href="yanzheng.html">免费注册</a>]</span>`;
+		// }
+		// 
+		// getI(".back")[0].onclick=function(event){
+		// 	let evt=window.event || event
+		// 	evt.preventDefault();
+		// 	saveCookie("userphone",userphone,-1);
+		// 	window.location.href="index.html";
+		// }
+		
+		
+</script>
