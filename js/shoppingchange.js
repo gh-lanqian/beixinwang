@@ -1,13 +1,15 @@
 //复选按钮
 $(".checkdp").change(function(){
 	$(this).parents(".order").find(".checkpre").prop("checked",$(this).prop("checked"))
+	getSum()
 })
 $(".checkpre").change(function(){
 	var length=$("input[class=checkpre]:checked").length;
 	var len=$("input[class=checkpre]").length;
 	if(length>0){
 		$(this).parents(".order").find(".checkdp").prop("checked",true)
-	}else{
+	}
+	if(length<1){
 		$(this).parents(".order").find(".checkdp").prop("checked",false)
 	}
 	if(length==len){
@@ -15,6 +17,7 @@ $(".checkpre").change(function(){
 	}else{
 		$(".zcheckall").prop("checked",false)
 	}
+	getSum()
 })
 
 $(".checkdp").change(function(){
@@ -36,6 +39,7 @@ $(".zcheckall").change(function(){
 		$(".checkpre").prop("checked",false)
 		$(".zcheckall").prop("checked",false)
 	}
+	getSum()
 })
 getSum()
 //点击加
@@ -84,11 +88,21 @@ $(".shuru").change(function(){
 $(".operationc").click(function(evevt){
 	showq()
 	$(".qqq").click(()=>{
-		var len3=$(this).parents(".order").find(".checkpre").length;
 		$(this).parents(".details").remove();
-		if(len3<=1){
-			$(this).parents(".order").remove();
-		}
+		$(".order").each(function(i,ele){
+			var leng1=$(ele).find(".checkpre").length;
+			if(leng1==0){
+				$(ele).remove();
+			}
+		})
+		$(".cart").each(function(i,ele){
+			var leng=$(ele).find(".order").length;
+			if(leng==0){
+				$(ele).css("display","none");
+				$(".total").css("display","none");
+				$(".nogoods").css("display","block");
+			}
+		})
 		$(".zycc").css("display","none")
 		getSum()
 	})
@@ -103,6 +117,14 @@ $(".plsc").click(function(){
 			var len2=$(ele).find(".checkpre").length;
 			if(length2==len2){
 				$(ele).remove();
+			}
+		})
+		$(".cart").each(function(i,ele){
+			var leng=$(ele).find(".order").length;
+			if(leng==0){
+				$(ele).css("display","none");
+				$(".total").css("display","none");
+				$(".nogoods").css("display","block");
 			}
 		})
 		$(".zycc").css("display","none")
@@ -140,12 +162,12 @@ function getSum(){
 	var count=0;
 	var money=0;
 	//总数量
-	$(".shuru").each(function(i,ele){
+	$(".checkpre:checked").parents(".details").find(".shuru").each(function(i,ele){
 		count+=parseInt($(ele).val());
 	})
 	$(".zj").text(count);
 	//总计
-	$(".subtotalc").each(function(i,ele){
+	$(".checkpre:checked").parents(".details").find(".subtotalc").each(function(i,ele){
 		money+=parseFloat($(ele).text().substr(1));
 	})
 	$(".totalprice").text("￥"+money.toFixed(2));

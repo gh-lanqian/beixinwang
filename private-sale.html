@@ -41,8 +41,8 @@
 					<div class="group-m">
 						<span>特卖汇</span>
 						<img src="http://www.bxmedia.net/template/bdw/statics/images/02-01.png" alt="">
-						<a href="">全部</a>
-						<a href="">七月特卖</a>
+						<a href="" class="allsale">全部</a>
+						<a href="" class="sale-sev">七月特卖</a>
 					</div>
 				</div>
 				<ul class="list-process">
@@ -82,17 +82,26 @@
 		
 		<script type="text/javascript">
 			sale()
-			// $(".now").click(function(){
-			// 	$(".sale-more1").css("display","block")
-			// 	$(".sale-more2").css({"display":"none","background":"transparent"})
-			// 	$(this).css("background","#1d7ad9")
-			// })
-			// $(".ready").click(function(){
-			// 	$(".sale-more2").css({"display":"block","color":"white"})
-			// 	$(".sale-more1").css({"display":"none","background":"transparent"})
-			// 	$(this).css("background","#1d7ad9")
-			// 	$(".infopage").css("display","none")
-			// })
+			$(".now").click(function(){
+				$(".sale-more1").css("display","block")
+				$(".sale-more2").css("display","none")
+				$(".ready").css({"background":"transparent","color":"#666666"})
+				$(this).css({"background":"#1d7ad9","color":"white"})
+				$(".infopage").css("display","block")
+			})
+			$(".ready").click(function(){
+				$(".sale-more2").css({"display":"block"})
+				$(".sale-more1").css({"display":"none"})
+				$(".now").css({"background":"transparent","color":"#666666"})
+				$(this).css({"background":"#1d7ad9","color":"white"})
+				$(".infopage").css("display","none")
+			})
+			$(".allsale").click(function(event){
+				$(this).css({"background":"#cc0000","color":"white"})
+			})
+			$(".sale-sev").click(function(event){		
+				$(this).css({"background":"#cc0000","color":"white"})
+			})
 		</script>
 			<!-- foot -->
 		<div class="foot"></div>
