@@ -286,6 +286,20 @@
 .nogoods{
 	width: 1130px;
 	margin: 0 auto;
-	height: 510px;
-	background: url(../img/shoppingcar.png);
+	height: 500px;
+	ul{
+		float: left;
+		.shop1{
+			margin-left: 245px;
+			margin-top: 138px;
+		}
+		.shop2{
+			margin-left: 248px;
+		}
+	}
+	.shop3{
+		float: right;
+		padding-top: 70px;
+		padding-right: 220px;
+	}
 }

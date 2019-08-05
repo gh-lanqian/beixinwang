@@ -16,6 +16,7 @@ $(".checkpre").change(function(){
 		$(".zcheckall").prop("checked",false)
 	}
 })
+
 $(".checkdp").change(function(){
 	var length1=$("input[class=checkdp]:checked").length;
 	var len1=$("input[class=checkdp]").length;
