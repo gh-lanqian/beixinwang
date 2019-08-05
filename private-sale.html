@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>北新网-新华书店综合网购平台</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
+		<link rel="stylesheet" type="text/css" href="css/goodslist.css"/>
+		<link rel="stylesheet" type="text/css" href="css/private-sale.css"/>
+		<script type="text/javascript" src="js/$function.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/private-sale.js"></script>
+		<link rel="import" href="head.html" id="page1"/>
+		<link rel="shortcut icon" href="img/bitbug_favicon.ico" /> 
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.write(page1.import.body.innerHTML);
+		</script>
+		<script type="text/javascript">
+			getI(".shoppingclass")[0].onmouseover=function(){
+				getI(".dc")[0].style.display="block";
+			}
+			getI(".shoppingclass")[0].onmouseout=function(){
+				getI(".dc")[0].style.display="none";
+			}
+			getI(".dc")[0].onmouseover=function(){
+				getI(".dc")[0].style.display="block";
+			}
+			getI(".dc")[0].onmouseout=function(){
+				getI(".dc")[0].style.display="none";
+			}
+		</script>
+		<div class="sale-main">
+			<div class="layer">
+				<div class="now">进行中的特卖</div>
+				<div class="ready">即将开始</div>
+			</div>
+			<div class="sale-more1">
+				<div class="group">
+					<div class="group-m">
+						<span>特卖汇</span>
+						<img src="http://www.bxmedia.net/template/bdw/statics/images/02-01.png" alt="">
+						<a href="">全部</a>
+						<a href="">七月特卖</a>
+					</div>
+				</div>
+				<ul class="list-process">
+					<!-- <li>
+						<div class="listImage">
+							<a href=""><img src="http://images.bxmedia.net/upload/259/2019/7/23/45/454ca-d957-443f-bb66-9fd3ca2d0cd.jpg" alt=""></a>
+						</div>
+						<p>暑期读物 曹文轩小说阅读与鉴赏（全10册）</p>
+						<ul class="pricesale">
+							<li class="pri-list">原价：￥248.00</li>
+							<li class="pri-list">折扣：5.0折</li>
+							<li class="pri-list">购买<span>0</span>件</li>
+							<li class="pri-list">剩余：<span>5</span>件</li>
+						</ul>
+						<div class="pro-bottom">
+							<span>￥124.00</span>
+							<a href=""><img src="http://www.bxmedia.net/template/bdw/statics/images/02-08.PNG" alt=""></a>
+						</div>
+					</li> -->
+				</ul>
+			</div>
+			<div class="sale-more2" style="display: none;"></div>
+			<ul class="infopage">
+				<li><span class="nowpage">1</span></li>
+				<li><a href="" class="everypage">2</a></li>
+				<li><a href="" title="下一页" class="downpage">下一页</a></li>
+				<li>
+					<div class="pagediv">
+						第
+						<input type="text" value="1" class="inputpage">
+						 页/2页
+						 <input type="button" value="确定" class="butnpage">
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			sale()
+			// $(".now").click(function(){
+			// 	$(".sale-more1").css("display","block")
+			// 	$(".sale-more2").css({"display":"none","background":"transparent"})
+			// 	$(this).css("background","#1d7ad9")
+			// })
+			// $(".ready").click(function(){
+			// 	$(".sale-more2").css({"display":"block","color":"white"})
+			// 	$(".sale-more1").css({"display":"none","background":"transparent"})
+			// 	$(this).css("background","#1d7ad9")
+			// 	$(".infopage").css("display","none")
+			// })
+		</script>
+			<!-- foot -->
+		<div class="foot"></div>
+		<script type="text/javascript">
+			$(".foot").load("foot.html");
+		</script>
+	</body>
+</html>

@@ -5,11 +5,10 @@
 		<title>北新网-新华书店综合网购平台</title>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
-		<link rel="stylesheet" type="text/css" href="css/zhucesucess.css"/>
-		<link rel="stylesheet" type="text/css" href="css/goods.css"/>
+		<link rel="stylesheet" type="text/css" href="css/goodslist.css"/>
 		<script type="text/javascript" src="js/$function.js"></script>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="js/goods.js"></script>
+		<script type="text/javascript" src="js/goodslist.js"></script>
 		<link rel="import" href="head.html" id="page1"/>
 		<link rel="shortcut icon" href="img/bitbug_favicon.ico" /> 
 	</head>
@@ -195,6 +194,10 @@
 									<div class="tab3-md">-</div>
 									<input type="" class="tab3-ip"/>
 								</div>
+								<div class="qk">
+									<input type="button" value="清空" class="inputa">
+									<input type="button" value="确定" class="inputb">
+								</div>
 							</li>
 						</ul>
 						<div class="text">
@@ -203,9 +206,8 @@
 						<div class="next1"><a href="" title="上一页"></a></div>
 						<div class="next2"><a href="" title="下一页"></a></div>
 					</div>
-					<div class="right-listmore">
-						<!-- <ul class="goodslist">
-							<li class="goodsli">
+					<ul class="right-listmore">
+							<!-- <li class="goodsli">
 								<div class="listdiv">
 									<div class="picture">
 										<a href=""><img src="http://images.bxmedia.net/upload/1/2016/4/10/92/27f1b-a0e0-48b1-b951-4e41e913afe_200X200.jpg" alt=""></a>
@@ -233,62 +235,92 @@
 										尼科洛·马基雅维里&nbsp;&nbsp;著|&nbsp;&nbsp;商务印书馆|&nbsp;1985-07-01
 									</div>
 								</div>
-							</li>
-						</ul> -->
-					</div>
+							</li> -->
+					</ul>
+					<ul class="infopage">
+						<li><span class="nowpage">1</span></li>
+						<li><a href="" class="everypage">2</a></li>
+						<li><a href="" class="everypage">3</a></li>
+						<li><a href="" class="everypage">4</a></li>
+						<li><a href="" class="everypage">5</a></li>
+						<li><a href="" class="everypage">6</a></li>
+						<li><a href="" title="下一页" class="downpage">下一页</a></li>
+						<li>
+							<div class="pagediv">
+								第
+								<input type="text" value="1" class="inputpage">
+								 页/23页
+								 <input type="button" value="确定" class="butnpage">
+							</div>
+						</li>
+					</ul>
 					<script type="text/javascript">
 						goods();
-						getI(".listdiv")[0].onmouseenter=function(){
-							getI(".goodsli")[0].style.cssText=`
-								border-color: #e6e6e6;
-								border-bottom-color:white;
-							`;
-							getI(".showmore")[0].style.display="block";
-							getI(".listdiv")[0].style.cssText=`
-								border-color: #e6e6e6;
-								border-top-color:white;
-							`;
-							getI(".sj")[0].style.color="red";
-						}
-						getI(".listdiv")[0].onmouseleave=function(){
-							getI(".goodsli")[0].style.cssText=`
-								border-color: white;
-							`;
-							getI(".showmore")[0].style.display="none";
-							getI(".listdiv")[0].style.cssText=`
-								border-color: white;
-							`;
-							getI(".sj")[0].style.color="#666666";
-						}
-						getI(".shop")[0].onmouseenter=function(){
-							getI(".shop")[0].style.cssText=`
-								border:1px solid red;
-							`;
-						}
-						getI(".shop")[0].onmouseleave=function(){
-							getI(".shop")[0].style.cssText=`
-								border:1px solid #dddddd;
-							`;
-						}
-						getI(".shoucan")[0].onmouseenter=function(){
-							getI(".shoucan")[0].style.cssText=`
-								border:1px solid red;
-								background-position:8px -14px;
-								transition: background-position .1s;
-							`;
-							getI(".shop")[0].style.cssText=`
-								border-left:1px solid red;
-							`;
-						}
-						getI(".shoucan")[0].onmouseleave=function(){
-							getI(".shoucan")[0].style.cssText=`
-								border:1px solid #dddddd;
-							`;
-							getI(".shop")[0].style.cssText=`
-								border-left:1px solid #dddddd;
-							`;
-						}
+						$(".descript").click(function(){
+							$(this).prop("href","description.html")
+						})
+						$(".shop").click(function(){
+							var helight1=document.body.clientHeight || document.documentElement.clientHeight;
+							$(".zyc").css({"display":"block","height": helight1 });
+							$(".godele").click(function(){
+								$(".zyc").css({"display":"none"});
+							})
+							$(".contgoods").click(function(){
+								$(".zyc").css({"display":"none"});
+							})
+						})
+						
+						$(".goodsli").mouseenter(function(){
+							$(this).css({"border-color":"#e6e6e6","border-bottom-color":"white"});
+							$(this).children(".listdiv").css({"border-color":"#e6e6e6","border-top-color":"white"});
+							$(this).find(".showmore").css({"display":"block"});
+							$(this).find(".sj").css({"color":"red"});
+						})
+						$(".goodsli").mouseleave(function(){
+						 	$(this).css({"border-color":"white"});
+							$(this).children(".listdiv").css({"border-color":"white"});
+							$(this).find(".showmore").css({"display":"none"});
+							$(this).find(".sj").css({"color":"#666666"});
+						})
+						$(".shop").mouseenter(function(){
+							$(this).css({"border":"1px solid red"});
+						})
+						$(".shop").mouseleave(function(){
+							$(this).css({"border":"1px solid #dddddd"});
+						})
+						$(".shoucan").mouseenter(function(){
+							$(this).css({"border":"1px solid red","background-position":"8px -14px","transition":"background-position .1s"});
+							$(this).next().css({"border-left":"1px solid red"});
+						})
+						$(".shoucan").mouseleave(function(){
+							$(this).next().css({"border-left":"1px solid #dddddd"});
+							$(this).css({"border":"1px solid #dddddd","background-position":"8px 8px","transition":"background-position .1s"});
+						})	
+							
 					</script>
+				</div>
+			</div>
+		</div>
+		<div class="zyc">
+			<div class="gocar">
+				<div class="gocar-bg">
+					<div class="gocarMore">
+						<div class="more-top">
+							<i>温馨提示</i>
+							<span class="godele"><img src="http://www.bxmedia.net/template/bdw/statics/images/wxts-btn.png" alt=""></span>
+						</div>
+						<div class="more-bottom">
+							<div class="m-left">
+								<img src="http://www.bxmedia.net/template/bdw/statics/images/wxts-img1.png" alt="">
+							</div>
+							<div class="m-right">
+								<p class="adds">商品已成功添加到购物车！</p>
+								<p class="adds-num">购物车共<span>2</span>件商品</p>
+								<a href="shoppingcar.html" class="mongo">去购物车结算</a>
+								<span class="contgoods">继续购物</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

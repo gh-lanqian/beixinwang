@@ -2,8 +2,118 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>北新网-新华书店综合网购平台</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shoppingcar.css"/>
+		<script type="text/javascript" src="js/$function.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/shoppingcar.js"></script>
+		<link rel="import" href="head.html" id="page1"/>
+		<link rel="shortcut icon" href="img/bitbug_favicon.ico" /> 
 	</head>
 	<body>
+		<script type="text/javascript">
+			document.write(page1.import.body.innerHTML);
+		</script>
+		<script type="text/javascript">
+			getI(".shoppingclass")[0].onmouseover=function(){
+				getI(".dc")[0].style.display="block";
+			}
+			getI(".shoppingclass")[0].onmouseout=function(){
+				getI(".dc")[0].style.display="none";
+			}
+			getI(".dc")[0].onmouseover=function(){
+				getI(".dc")[0].style.display="block";
+			}
+			getI(".dc")[0].onmouseout=function(){
+				getI(".dc")[0].style.display="none";
+			}
+		</script>
+		<div class="cart"  style="display: none;">
+			<ul class="nav">
+				<li class="nowli">1.查看购物车</li>
+				<li class="everyli">2.填写订单信息</li>
+				<li class="everyli">3.付款到收银台</li>
+				<li class="everyli">4.收货评价</li>
+			</ul>
+			<div class="all">
+				<input type="checkbox" class="zcheckall" checked="checked">
+				<span class="checkall">全选</span>
+			</div>
+		
+			<!-- <div class="order" >
+				<div class="ordernav" >
+					<div class="shop" >
+						<input type="checkbox" class="checkdp">
+						<img src="http://www.bxmedia.net/template/bdw/statics/images/96.png" alt="" class="imgdp" >
+						<a href="" >北京图书大厦</a>
+						<a href=""><img src="http://www.bxmedia.net/template/bdw/statics/images/qq.png" alt="" ></a>
+					</div>
+					<div class="numm">数量</div>
+					<div class="pricee" >单价</div>
+					<div class="subtotal" >小计</div>
+					<div class="operation">操作</div>
+				</div>
+				<div class="details" >
+					<div class="details-left" >
+						<input type="checkbox" class="checkpre">
+						<a href="" ><img src="http://images.bxmedia.net/upload/1/2017/2/7/42/28848-3f8a-47d9-b346-82aef840720_50X50.jpg" alt="" width="50px" height="50px"></a>
+						<span >查令十字街84号-[珍藏版]</span>
+					</div>
+					<div class="numc" >
+						<input type="text" value="1" class="shuru">
+						<span >
+							<img src="http://www.bxmedia.net/template/bdw/statics/images/100.png" alt="" class="jia">
+							<img src="http://www.bxmedia.net/template/bdw/statics/images/101.png" alt="" class="jian">
+						</span>
+					</div>
+					<div class="pricec">28.0</div>
+					<div class="subtotalc" >￥28.0</div>
+					<div class="operationc" >删除此商品</div>
+				</div>
+				<div class="promote-sales" >
+					<span >店铺优惠：</span></div>
+			</div> -->
+			
+		</div>
+		<div class="zycc">
+			<div class="center">
+				<div class="center-m">
+					<div class="imp-more">
+						<h4 class="move">删除商品<span class="shanchu">x</span></h4>
+						<div class="easyDialog_text">确定要删除该商品吗？</div>
+						<div class="easyDialog_footer">
+							<input type="button" value="确定" class="qqq">
+							<input type="button" value="取消" class="xxx">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="total" style="display: none;">
+			<div class="total-left">
+				<input type="checkbox" class="zcheckall" checked="checked">
+				<label>全选</label>
+				<span class="plsc" style="cursor: pointer;display: inline-block;">批量删除</span>
+				<span>商品件数总计&nbsp;&nbsp;:<label class="zj">0</label></span>
+				<span>赠送积分总计&nbsp;&nbsp;:<label class="zjjf">0.0</label></span>
+				<span>促销优惠&nbsp;&nbsp;:<label>0.0</label>元</span>
+				<span>商品金额总计：<label class="totalprice">0.00</label>元</span>
+			</div>
+			<div class="jiesuan">结算</div>
+		</div>
+		<div class="nogoods">
+			
+		</div>
+		<script type="text/javascript">
+			shopping()
+		</script>
+		<script type="text/javascript" src="js/shoppingchange.js"></script>
+			<!-- foot -->
+		<div class="foot"></div>
+		<script type="text/javascript">
+			$(".foot").load("foot.html");
+		</script>
 	</body>
 </html>
