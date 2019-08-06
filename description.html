@@ -8,7 +8,9 @@
 		<link rel="stylesheet" type="text/css" href="css/goodslist.css"/>
 		<link rel="stylesheet" type="text/css" href="css/description.css"/>
 		<script type="text/javascript" src="js/$function.js"></script>
+		<script type="text/javascript" src="js/Mirror.js"></script>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/description.js"></script>
 		<link rel="import" href="head.html" id="page1"/>
 		<link rel="shortcut icon" href="img/bitbug_favicon.ico" /> 
 	</head>
@@ -30,198 +32,384 @@
 				getI(".dc")[0].style.display="none";
 			}
 		</script>
-		<div class="goodtitle">
-			<ul class="goodtitles">
-				<li class="lileft"><a href="">首页</a></li>
-				<li class="lileft"><a href="">社科馆</a></li>
-				<li class="lileft"><a href="">社会科学</a></li>
-				<li class="lilast1"><a href="">经典著作</a></li>
-			</ul>
-		</div>
-		<div class="des-m">
-			<div class="shang"></div>
-			<div class="zhong">
-				<div class="z-layer">推荐商品</div>
-				<div class="z-spmore">
-					<!-- <div class="mc-bt-rt1"   style="display: none;">
+		<div class="des-z">
+			<!-- <div class="goodtitle">
+				<ul class="goodtitles">
+					<li class="lileft"><a href="">首页</a></li>
+					<li class="lileft"><a href="">社科馆</a></li>
+					<li class="lileft"><a href="">社会科学</a></li>
+					<li class="lilast1"><a href="">经典著作</a></li>
+				</ul>
+			</div>
+			<div class="des-m">
+				<div class="shang">
+					<div class="mirror">
+						<div class="backmirr"></div>
+						<div class="list-pic">
+							<div class="anni ll"><</div>
+							<div class="middle"><span class="nowimg"><img src="http://images.bxmedia.net/upload/1/2016/4/10/92/27f1b-a0e0-48b1-b951-4e41e913afe_58X58.jpg" alt=""></span></div>
+							<div class="anni rr">></div>
+						</div>
+						<div class="mirr-btm">
+							<span>分享给好友</span>
+							<label>收藏商品</label>
+						</div>
+					</div>
+					<div class="descript">
+						<div class="infotitle">
+							君主论<br/>
+							<p><span>尼科洛·马基雅维里</span>&nbsp;(作者)&nbsp;<span>潘汉典</span>&nbsp;(译者)&nbsp;</p>
+						</div>
+						<ul>
+							<li class="shoujia"><label>销&nbsp;&nbsp;售&nbsp;&nbsp;价</label><span><span>￥</span>12.75</span><i>[8.5折][库存13件]</i>&nbsp;<a href="">(降价通知)</a></li>
+							<li class="li-r li-r1"><label>市&nbsp;&nbsp;场&nbsp;&nbsp;价</label><span>￥15.0</span></li>
+							<li class="li-r li-r2"><label>商品评价</label><span></span>(共有0条评论)</li>
+							<li class="li-r li-r3"><label>服&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</label>&nbsp;&nbsp;由&nbsp;&nbsp;<a href="">中关村图书大厦</a>&nbsp;&nbsp;负责发货，并提供售后服务。</li>
+							<li class="xinxi"><label>图书信息</label> ISBN：7-100-01648-7 <a href="">更多基本信息></a><br/>
+							    <p>出版社：商务印书馆</p>
+								<p>出版日期：1985-07-01</p>
+								<p style="color: #666666;">装帧/页数：平装：131页</p>
+							</li>
+						</ul>
+						<div class="i-btm">
+							<div class="i-btmtop">
+								<span>购买数量</span>
+								<label class="lab1"></label>
+								<input type="text" value="1">
+								<label class="lab2"></label>
+							</div>
+							<div class="i-btmdow">
+								<a href=""></a>
+								<span></span>
+							</div>
+						</div>
+					</div>
+					<div class="shopmessige">
+						<div class="shop-info">
+							<div class="b-layer">店铺信息</div>
+							<div class="b-rows">
+								<div class="b-t"><a href="">中关村图书大厦</a></div>
+								<div class="b-d"><img src="http://images.bxmedia.net/upload/1/2016/4/5/c91f1029-d153-447a-a502-61c0d679698e.gif" alt=""></div>
+							</div>
+							<ul class="b-rowss">
+								<li class="xinred">描述相符：<span></span></li>
+								<li class="xinred">服务态度：<span></span></li>
+								<li class="xinred">发货速度：<span></span></li>
+							</ul>
+							<ul class="b-rowss">
+								<li>联系客服：<img src="http://www.bxmedia.net/template/bdw/statics/images/qq.png" alt=""></li>
+								<li>联系电话：010-82676668</li>
+								<li>工作时间：每周一至周日9:00-18:00</li>
+								<li>认证信息：</li>
+							</ul>
+							<div class="sc">
+								<span>收藏本店</span>
+							</div>
+						</div>
+						<div class="shop-more">
+							<div class="b-layer">更多卖家</div>
+							<ul>
+								<li><a href="">中关村图书大厦</a><span>￥12.75</span></li>
+								<li><a href="">北新自营</a><span>￥11.60</span></li>
+								<li><a href="">北京图书大厦</a><span>￥12.00</span></li>
+							</ul>
+							<a href="" class="look">查看所有卖家</a>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					getI(".nowimg")[0].onclick=function(){
+						new Mirror({
+							width:200,
+							height:200,
+							mulitple:2
+						},getI(".backmirr")[0])
+					}
+					
+				</script>
+				
+				<div class="zhong">
+					<div class="z-layer">推荐商品</div>
+					<div class="z-spmore">
 						<div class="btn left"><</div>
 						<div class="btn right">></div>
 						<div class="mrt-bot">
-							<div class="mrt-bots">
-								<div class="box">
-										<div class="list">
+							<div class="box">
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1068/710000447998320_1_160X160.jpg" ></div>
+										<div class="title">十八世纪科学、技术和</div>
+										<div class="price"><span>￥67.92</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1030/710000315322788_1_160X160.jpg" ></div>
+										<div class="title">精神分析引论</div>
+										<div class="price"><span>￥27.20</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/10/32/6497a-aa17-44c8-bb71-4fe96d10c90_160X160.jpg" ></div>
+										<div class="title">十九世纪欧洲史</div>
+										<div class="price"><span>￥23.80</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/10/43/48573-613e-4c79-a5fa-0eb5fc5ad75_160X160.jpg" ></div>
+										<div class="title">联邦党人文集</div>
+										<div class="price"><span>￥39.10</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1063/710009817_1_160X160.jpg" ></div>
+										<div class="title">意识形态与乌托邦</div>
+										<div class="price"><span>￥28.50</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1033/710001975483898_1_160X160.jpg" ></div>
+										<div class="title">罗马帝国衰亡史-下册</div>
+										<div class="price"><span>￥40.80</span></div>
+									</a>
+								</div>
+								<div class="list">
 										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/0/dbfee-9aec-4d25-901a-2b91444f958_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男装 篮球 针织夹克 NBA篮球茄克 NBA FAN GEAR A95416</div>
-											<div class="price"><span>￥347.0</span><label class="lab">￥699.0</label></div>
+											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/12/2/3e44a-a405-4615-8039-b7053c3c568_160X160.jpg" ></div>
+											<div class="title">正义法的理论</div>
+											<div class="price"><span>￥40.80</span></div>
 										</a>
-									</div>
-									<div class="list">
+								</div>
+											
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/28/be66d-eee8-4448-b513-b94f7ca1f8c_160X160.jpg" ></div>
+										<div class="title">拉奥孔</div>
+										<div class="price"><span>￥21.25</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/77/697d0-1805-4b29-943c-b3b2e5f24e0_160X160.jpg" ></div>
+										<div class="title">地方知识</div>
+										<div class="price"><span>￥29.20</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/0/f9596-ad0d-4652-945a-e1ee9406d7c_160X160.jpg" ></div>
+										<div class="title">世界历史与救赎历史</div>
+										<div class="price"><span>￥25.10</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/21/f7827-7461-490d-bef1-cafd7bbd646_160X160.jpg" ></div>
+										<div class="title">论德国宗教和哲学的历史</div>
+										<div class="price"><span>￥15.30</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/20/56/826cf-f033-4b25-8868-ca02c91d45f_160X160.jpg" ></div>
+										<div class="title">福利经济学评述</div>
+										<div class="price"><span>￥27.20</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1055/710006876285_1_160X160.jpg" ></div>
+										<div class="title">耶稣传</div>
+										<div class="price"><span>￥23.80</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/10/48/5d6fc-7192-4c3a-a6fd-a91119bf2d4_160X160.jpg" ></div>
+										<div class="title">西方哲学史-下卷</div>
+										<div class="price"><span>￥32.30</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1068/710000447998320_1_160X160.jpg" ></div>
+										<div class="title">十八世纪科学、技术和</div>
+										<div class="price"><span>￥67.92</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1030/710000315322788_1_160X160.jpg" ></div>
+										<div class="title">精神分析引论</div>
+										<div class="price"><span>￥27.20</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/10/32/6497a-aa17-44c8-bb71-4fe96d10c90_160X160.jpg" ></div>
+										<div class="title">十九世纪欧洲史</div>
+										<div class="price"><span>￥23.80</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/10/43/48573-613e-4c79-a5fa-0eb5fc5ad75_160X160.jpg" ></div>
+										<div class="title">联邦党人文集</div>
+										<div class="price"><span>￥39.10</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1063/710009817_1_160X160.jpg" ></div>
+										<div class="title">意识形态与乌托邦</div>
+										<div class="price"><span>￥28.50</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1033/710001975483898_1_160X160.jpg" ></div>
+										<div class="title">罗马帝国衰亡史-下册</div>
+										<div class="price"><span>￥40.80</span></div>
+									</a>
+								</div>
+								<div class="list">
 										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/98/9e38e-113a-4772-b285-e10dc65b622_160X160.jpg" ></div>
-											<div class="title">Adidas 三叶草 女装 短袖上衣 TREFOIL TEE SLA FASHION A08253</div>
-											<div class="price"><span>￥170.0</span><label class="lab">￥299.0</label></div>
+											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/12/2/3e44a-a405-4615-8039-b7053c3c568_160X160.jpg" ></div>
+											<div class="title">正义法的理论</div>
+											<div class="price"><span>￥40.80</span></div>
 										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/37/03ef3-e977-461c-99e4-141cd05e407_160X160.jpg" ></div>
-											<div class="title">Nike 耐克 男装 训练 短袖紧身服826592-010</div>
-											<div class="price"><span>￥206.0</span><label class="lab">￥299.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/51/eff3b-62a9-4cfe-9c74-4df902ad417_160X160.jpg" ></div>
-											<div class="title">Puma 彪马 男装训练基础系列针织运动长裤82561404</div>
-											<div class="price"><span>￥146.0</span><label class="lab">￥299.0</label></div>
-										</a>
-									</div>						
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/87/6598a-1173-4111-87a4-b0fca93dcd3_160X160.jpg" ></div>
-											<div class="title">阿迪达斯 adidas 球类 球 656927</div>
-											<div class="price"><span>￥131.0</span><label class="lab">￥199.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/79/da5d2-d9fd-4782-a363-2b0e4ba791d_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男鞋 跑步 男子跑步鞋 CLIMAHEAT B24469</div>
-											<div class="price"><span>￥681.0</span><label class="lab">￥1099.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/001/AB3131_05_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男装 足球 CON16训练长裤 CONDIVO AB3131</div>
-											<div class="price"><span>￥197.0</span><label class="lab">￥299.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/005/AA5512_02_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男装 篮球 篮球图案T恤 AA5512</div>
-											<div class="price"><span>￥144.0</span><label class="lab">￥249.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/0/dbfee-9aec-4d25-901a-2b91444f958_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男装 篮球 针织夹克 NBA篮球茄克 NBA FAN GEAR A95416</div>
-											<div class="price"><span>￥347.0</span><label class="lab">￥699.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/98/9e38e-113a-4772-b285-e10dc65b622_160X160.jpg" ></div>
-											<div class="title">Adidas 三叶草 女装 短袖上衣 TREFOIL TEE SLA FASHION A08253</div>
-											<div class="price"><span>￥170.0</span><label class="lab">￥299.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/37/03ef3-e977-461c-99e4-141cd05e407_160X160.jpg" ></div>
-											<div class="title">Nike 耐克 男装 训练 短袖紧身服826592-010</div>
-											<div class="price"><span>￥206.0</span><label class="lab">￥299.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/22/51/eff3b-62a9-4cfe-9c74-4df902ad417_160X160.jpg" ></div>
-											<div class="title">Puma 彪马 男装训练基础系列针织运动长裤82561404</div>
-											<div class="price"><span>￥146.0</span><label class="lab">￥299.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/87/6598a-1173-4111-87a4-b0fca93dcd3_160X160.jpg" ></div>
-											<div class="title">阿迪达斯 adidas 球类 球 656927</div>
-											<div class="price"><span>￥131.0</span><label class="lab">￥199.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/23/79/da5d2-d9fd-4782-a363-2b0e4ba791d_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男鞋 跑步 男子跑步鞋 CLIMAHEAT B24469</div>
-											<div class="price"><span>￥681.0</span><label class="lab">￥1099.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/001/AB3131_05_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男装 足球 CON16训练长裤 CONDIVO AB3131</div>
-											<div class="price"><span>￥197.0</span><label class="lab">￥299.0</label></div>
-										</a>
-									</div>
-									<div class="list">
-										<a href="" title="">
-											<div class="pic"><img title="" src="http://images.bxmedia.net/upload/266/005/AA5512_02_160X160.jpg" ></div>
-											<div class="title">Adidas 阿迪达斯 男装 篮球 篮球图案T恤 AA5512</div>
-											<div class="price"><span>￥144.0</span><label class="lab">￥249.0</label></div>
-										</a>
-									</div>
+								</div>
+							
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/28/be66d-eee8-4448-b513-b94f7ca1f8c_160X160.jpg" ></div>
+										<div class="title">拉奥孔</div>
+										<div class="price"><span>￥21.25</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/77/697d0-1805-4b29-943c-b3b2e5f24e0_160X160.jpg" ></div>
+										<div class="title">地方知识</div>
+										<div class="price"><span>￥29.20</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/0/f9596-ad0d-4652-945a-e1ee9406d7c_160X160.jpg" ></div>
+										<div class="title">世界历史与救赎历史</div>
+										<div class="price"><span>￥25.10</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/6/18/21/f7827-7461-490d-bef1-cafd7bbd646_160X160.jpg" ></div>
+										<div class="title">论德国宗教和哲学的历史</div>
+										<div class="price"><span>￥15.30</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/20/56/826cf-f033-4b25-8868-ca02c91d45f_160X160.jpg" ></div>
+										<div class="title">福利经济学评述</div>
+										<div class="price"><span>￥27.20</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/images/1055/710006876285_1_160X160.jpg" ></div>
+										<div class="title">耶稣传</div>
+										<div class="price"><span>￥23.80</span></div>
+									</a>
+								</div>
+								<div class="list">
+									<a href="" title="">
+										<div class="pic"><img title="" src="http://images.bxmedia.net/upload/1/2016/4/10/48/5d6fc-7192-4c3a-a6fd-a91119bf2d4_160X160.jpg" ></div>
+										<div class="title">西方哲学史-下卷</div>
+										<div class="price"><span>￥32.30</span></div>
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> -->
-			</div>
-			<div class="xia">
-				<div class="xia-left">
-					<ul class="xl-t">
-						<li>商品详情</li>
-						<li>包装清单</li>
-						<li>售后服务</li>
-						<li>客户评论（<span>0</span>）</li>
-						<li>售前咨询</li>
-					</ul>
-					<div class="xl-list1">
-						<div class="xllist-n">内容简介</div>
-						<div class="xllist1-txt">《君主论》是一本毁誉参半、不可不读的奇书，一直被奉为欧洲历代君主的案头之书，政治家的高指南，统治阶级巩固其统治的治国原则，和人类有史以来对政治斗争技巧最独到最精辟的解剖。自1532年开始印行，迄今470多年，从西方到东方，本书在政界、宗教界、学术等领域引起巨大的反响，被西方评论界列为和《圣经》、《资本论》等相提并论的影响人类历史的十部著作之一。 </div>
-					</div>
-					<div class="xl-list2">
-						<div class="xllist-n">目录</div>
-						<div class="xllist2-txt">
-							<div class="xllist2-txt1"></div>
-							<div class="ckmore">查看全部内容</div>
-							<div class="shouqi">收起</div>
+				</div>
+				<div class="xia">
+					<div class="xia-left">
+						<ul class="xl-t">
+							<li>商品详情</li>
+							<li>包装清单</li>
+							<li>售后服务</li>
+							<li>客户评论（<span>0</span>）</li>
+							<li>售前咨询</li>
+						</ul>
+						<div class="xl-list1">
+							<div class="xllist-n">内容简介</div>
+							<div class="xllist1-txt">《君主论》是一本毁誉参半、不可不读的奇书，一直被奉为欧洲历代君主的案头之书，政治家的高指南，统治阶级巩固其统治的治国原则，和人类有史以来对政治斗争技巧最独到最精辟的解剖。自1532年开始印行，迄今470多年，从西方到东方，本书在政界、宗教界、学术等领域引起巨大的反响，被西方评论界列为和《圣经》、《资本论》等相提并论的影响人类历史的十部著作之一。 </div>
+						</div>
+						<div class="xl-list2">
+							<div class="xllist-n">目录</div>
+							<div class="xllist2-txt">
+								<div class="xllist2-txt1"></div>
+								<div class="ckmore">查看全部内容</div>
+								<div class="shouqi">收起</div>
+							</div>
+						</div>
+						<div class="xl-list3">
+							<div class="xllist-n">节选</div>
+							<div class="xllist3-txt">
+								<div class="xllist2-txt2"></div>
+								<div class="ckmore">查看全部内容</div>
+								<div class="shouqi">收起</div>
+							</div>
 						</div>
 					</div>
-					<div class="xl-list3">
-						<div class="xllist-n">节选</div>
-						<div class="xllist3-txt">
-							<div class="xllist2-txt2"></div>
-							<div class="ckmore">查看全部内容</div>
-							<div class="shouqi">收起</div>
+					<div class="xia-right">
+						<div class="left-box02" style="float: right;">
+							<div class="b-title">我的足迹<a href="">清空</a></div>
+							<ul class="b-list1">
+								<li>
+									<a href="" title="理想国"><img src="http://images.bxmedia.net/upload/images/1035/710001756362_1_160X160.jpg" alt="" width="60" height="60"></a>
+									<p>
+										<i>理想国</i>
+										<b>￥29.50</b>
+									</p>
+								</li>
+							</ul>
+							<ul class="b-list1">
+								<li>
+									<a href="" title="理想国"><img src="http://images.bxmedia.net/upload/images/1035/710001756362_1_160X160.jpg" alt="" width="60" height="60"></a>
+									<p>
+										<i>理想国</i>
+										<b>￥29.50</b>
+									</p>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="xia-right">
-					<div class="left-box02" style="float: right;">
-						<div class="b-title">我的足迹<a href="">清空</a></div>
-						<ul class="b-list1">
-							<li>
-								<a href="" title="理想国"><img src="http://images.bxmedia.net/upload/images/1035/710001756362_1_160X160.jpg" alt="" width="60" height="60"></a>
-								<p>
-									<i>理想国</i>
-									<b>￥29.50</b>
-								</p>
-							</li>
-						</ul>
-						<ul class="b-list1">
-							<li>
-								<a href="" title="理想国"><img src="http://images.bxmedia.net/upload/images/1035/710001756362_1_160X160.jpg" alt="" width="60" height="60"></a>
-								<p>
-									<i>理想国</i>
-									<b>￥29.50</b>
-								</p>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			</div> -->
 		</div>
+		<script type="text/javascript">
+			var id= window.location.href.split("?")[1].split("=")[1];
+			// var perimeters = window.location.search;
+			console.log(id)
+			$.get("php/getGoodsInfo.php",{
+				goodsId:id
+			}
+			function(data){
+				data=JSON.parse(data)
+				renderdescription(data)
+			});
+			
+			// perimeters = decodeURI(perimeters.substr(1).split('&')[0]);
+			
+			
+		</script>
+		
 		<script type="text/javascript" src="js/ajaxpromise.js"></script>
 		<script type="text/javascript">
 			function getDataa(pageIndex){
@@ -249,30 +437,6 @@
 					}
 				);
 			}
-			function getDataa1(pageIndex){
-				ajaxPromise({
-					"url":"php/news1.php",
-					"params":{
-						pageIndex:pageIndex
-					}
-				}).then(
-					function(str){
-						getI(".xllist2-txt1")[0].innerHTML = str;
-					}
-				);
-			}
-			function getDatab1(pageIndex){
-				ajaxPromise({
-					"url":"php/news2.php",
-					"params":{
-						pageIndex:pageIndex
-					}
-				}).then(
-					function(str){
-						getI(".xllist2-txt2")[0].innerHTML = str;
-					}
-				);
-			}
 			getDataa(1);
 			getI(".ckmore")[0].onclick = function(){
 				getDataa(2);
@@ -287,21 +451,23 @@
 			}
 			
 			getI(".shouqi")[0].onclick = function(){
-				document.body.scrollTop = document.documentElement.scrollTop = 50;
+				$('html,body').animate({scrollTop: 600},600);
 				this.style.display = "none";
 				getI(".ckmore")[0].style.display = "block";
-				getDataa1(1)
+				getI(".xllist2-txt1")[0].innerHTML="";
+				getDataa(1)
 			}
 			getI(".shouqi")[1].onclick = function(){
-				document.body.scrollTop = document.documentElement.scrollTop = 50;
+				$('html,body').animate({scrollTop: 600},600);
 				this.style.display = "none";
 				getI(".ckmore")[1].style.display = "block";
-				getDatab1(1)
+				getI(".xllist2-txt2")[0].innerHTML="";
+				getDatab(1)
 			}
 			
 		</script>
-		<!-- <script type="text/javascript">
-				var index=4;
+		<script type="text/javascript">
+				var index=7;
 				var size=$('.box').children().size();
 				var listWidth=$('.list').width();
 				$(".right").click(function(){
@@ -317,18 +483,18 @@
 					$(".box").animate({ 
 						 'left':slideWidth+'px'
 					}, 500);
-					 if(index>=size-4){
-					    $('.box').animate({'left':-listWidth*4+'px'},0);// 图片切换过去   
-					    index=4;
+					 if(index>=size-7){
+					    $('.box').animate({'left':-listWidth*7+'px'},0);// 图片切换过去   
+					    index=7;
 					}
 					 if(index<1){
 					    //要注意在执行下面这段函数之前，已经切换到图片C了。
-					    $('.box').animate({'left':-(size-8)*listWidth+'px'},0);
+					    $('.box').animate({'left':-(size-14)*listWidth+'px'},0);
 					    // (肉眼看不到),但实际已经切换到图片C了
-					    index=size-8;
+					    index=size-14;
 					}
 				}
-		</script> -->
+		</script>
 			<!-- foot -->
 		<div class="foot"></div>
 		<script type="text/javascript">

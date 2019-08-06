@@ -207,35 +207,7 @@
 						<div class="next2"><a href="" title="下一页"></a></div>
 					</div>
 					<ul class="right-listmore">
-							<!-- <li class="goodsli">
-								<div class="listdiv">
-									<div class="picture">
-										<a href=""><img src="http://images.bxmedia.net/upload/1/2016/4/10/92/27f1b-a0e0-48b1-b951-4e41e913afe_200X200.jpg" alt=""></a>
-									</div>
-									<p><a href="" title="君主论">君主论</a></p>
-									<div class="grade">
-										<span></span>
-										<a href="">0</a>
-										<i>条评论</i>
-									</div>
-									<div class="gprice">
-										<i>￥12.75</i>
-										<span>￥15.00</span>
-									</div>
-									<div class="operate">
-										<span class="shoucan">收藏</span>
-										<a href="" class="shop">加到购物车</a>
-										<a href="" style="display: none;"></a>
-									</div>
-									<div class="store">
-										<a href="" class="sa">中关村图书大厦</a>
-										<span>等<a href="" class="sj">5个商家</a>在售</span>
-									</div>
-									<div class="showmore">
-										尼科洛·马基雅维里&nbsp;&nbsp;著|&nbsp;&nbsp;商务印书馆|&nbsp;1985-07-01
-									</div>
-								</div>
-							</li> -->
+		
 					</ul>
 					<ul class="infopage">
 						<li><span class="nowpage">1</span></li>
@@ -255,48 +227,13 @@
 						</li>
 					</ul>
 					<script type="text/javascript">
-						goods();
-						$(".descript").click(function(){
-							$(this).prop("href","description.html")
-						})
-						$(".shop").click(function(){
-							var helight1=document.body.clientHeight || document.documentElement.clientHeight;
-							$(".zyc").css({"display":"block","height": helight1 });
-							$(".godele").click(function(){
-								$(".zyc").css({"display":"none"});
-							})
-							$(".contgoods").click(function(){
-								$(".zyc").css({"display":"none"});
-							})
-						})
+						$.get("php/getGoodsList.php",
+						function(data){
+							data=JSON.parse(data)
+							goodsrender(data)
+							addevent()
+						});
 						
-						$(".goodsli").mouseenter(function(){
-							$(this).css({"border-color":"#e6e6e6","border-bottom-color":"white"});
-							$(this).children(".listdiv").css({"border-color":"#e6e6e6","border-top-color":"white"});
-							$(this).find(".showmore").css({"display":"block"});
-							$(this).find(".sj").css({"color":"red"});
-						})
-						$(".goodsli").mouseleave(function(){
-						 	$(this).css({"border-color":"white"});
-							$(this).children(".listdiv").css({"border-color":"white"});
-							$(this).find(".showmore").css({"display":"none"});
-							$(this).find(".sj").css({"color":"#666666"});
-						})
-						$(".shop").mouseenter(function(){
-							$(this).css({"border":"1px solid red"});
-						})
-						$(".shop").mouseleave(function(){
-							$(this).css({"border":"1px solid #dddddd"});
-						})
-						$(".shoucan").mouseenter(function(){
-							$(this).css({"border":"1px solid red","background-position":"8px -14px","transition":"background-position .1s"});
-							$(this).next().css({"border-left":"1px solid red"});
-						})
-						$(".shoucan").mouseleave(function(){
-							$(this).next().css({"border-left":"1px solid #dddddd"});
-							$(this).css({"border":"1px solid #dddddd","background-position":"8px 8px","transition":"background-position .1s"});
-						})	
-							
 					</script>
 				</div>
 			</div>

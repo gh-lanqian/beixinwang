@@ -12,10 +12,10 @@ class BannerPlay{
 				width:500,
 				height:300,
 				imgs:["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"],
-				douColor:"pink",
+				douColor:"white",
 				douSize:10,
-				douHColor:"red",
-				douIsCircle:true,
+				douHColor:"#b00000",
+				// douIsCircle:true,
 				douPosition:"下",
 				timeSpeace:1000,
 				myTimer:null,
@@ -64,7 +64,8 @@ class BannerPlay{
 				list-style:none;
 			`;
 			if(this.douPosition=="下"){
-				douUl.style.left=`${(this.width-this.douSize*this.imgs.length*2)/2}px`;
+				// douUl.style.left=`${(this.width-this.douSize*this.imgs.length*2)/2}px`;
+				douUl.style.left=`${this.width-this.douSize*4}px`;
 				douUl.style.bottom="20px";
 			}else if(this.douPosition=="上"){
 				douUl.style.left=`${(this.width-this.douSize*this.imgs.length*2)/2}px`;
@@ -77,14 +78,16 @@ class BannerPlay{
 				douLi.setAttribute("index",i)
 				douLi.style.cssText=`
 					float:left;
-					margin-right:${this.douSize}px;
+					margin-right:${this.douSize/10}px;
 					width:${this.douSize}px;
-					height:${this.douSize}px;
+					height:${this.douSize/10}px;
 					background-color:${this.douColor};
 				`;
-				if(this.douIsCircle){
-					douLi.style.borderRadius="50%";
-				}
+				// if(this.douIsCircle){
+				// 	douLi.style.borderRadius="50%";
+				// }else{
+					// douLi.style.borderRadius="0";
+				// }
 				if(i==0){
 					douLi.style.backgroundColor=this.douHColor;
 				}

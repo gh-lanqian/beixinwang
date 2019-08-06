@@ -11,7 +11,7 @@ jQuery.fn.extend({
 			lleft:30,
 			top:180,
 			rleft:885,
-			timespace:100
+			timespace:500
 		};
 		for(let key in defaultObj){
 			if(!obj[key]){
