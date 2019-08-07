@@ -91,9 +91,12 @@
 				}else if(this.value.length<4){
 					this.nextElementSibling.nextElementSibling.nextElementSibling.className="pass-show1";
 					this.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML="请输入4位图形验证码!";
-				}else{
+				}else if(getI(".txt1")[0].value==str){
 					this.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML="";
-					this.nextElementSibling.nextElementSibling.nextElementSibling.className="";
+					this.nextElementSibling.nextElementSibling.nextElementSibling.className="pass-show2";
+				}else{
+					this.nextElementSibling.nextElementSibling.nextElementSibling.className="pass-show1";
+					this.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML="请输入正确验证码!";
 				}
 			}
 			function getData(userphone){
@@ -119,14 +122,14 @@
 				}else if(check(getI(".txt")[0].value,"userphone")){
 					getData(getI(".txt")[0].value)
 				}else{
-					getI(".txt")[0].nextElementSibling.innerHTML="";
-					getI(".txt")[0].nextElementSibling.className="pass-show2";
+					getI(".txt")[0].nextElementSibling.innerHTML="请输入正确手机号!";
+					getI(".txt")[0].nextElementSibling.className="pass-show1";
 				}
 				//短信验证码
-				if(getI(".txt3")[0].value==""){
-					alert("请输入您的短信验证码");
-					return;
-				}
+				// if(getI(".txt3")[0].value==""){
+				// 	alert("请输入您的短信验证码");
+				// 	return;
+				// }
 				//图形验证码
 				if(getI(".txt1")[0].value!=str){
 					this.nextElementSibling.nextElementSibling.nextElementSibling.className="pass-show1";

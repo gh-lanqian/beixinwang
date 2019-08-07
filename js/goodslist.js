@@ -18,7 +18,7 @@ function goodsrender(str){
 									width: 224px;
 									height: 390px;">
 					<div class="picture">
-						<a href="'description.html?goodsId='+${str[i].goodsId}" style="display: block;
+						<a href="" style="display: block;
 								width: 200px;
 								height: 200px;
 								overflow: hidden;
@@ -127,21 +127,47 @@ function goodsrender(str){
 	`)
 	}
 }
-function addevent(){
+function addevent(str){
 	$(".descript").click(function(){
 		$(this).prop("href","description.html")
 	})
-	$(".shop").click(function(){
-		var helight1=document.body.clientHeight || document.documentElement.clientHeight;
-		$(".zyc").css({"display":"block","height": helight1 });
-		$(".godele").click(function(){
-			$(".zyc").css({"display":"none"});
-		})
-		$(".contgoods").click(function(){
-			$(".zyc").css({"display":"none"});
+	$(".shop").each(function(i,ele){
+		$(ele).click(function(){
+			var userphone=getCookie("userphone");
+			// console.log(userphone)
+			var goodsId=str[i].goodsId
+			console.log(goodsId)
+			var goodsCount="1"
+			$.get("php/addShoppingCart.php",{vipName:userphone,
+			goodsId:goodsId,goodsCount:goodsCount
+			},
+			function(str){
+				if(str==0){
+					alert("加入购物车失败")
+				}else{
+					var helight1=document.body.clientHeight || document.documentElement.clientHeight;
+					$(".zyc").css({"display":"block","height": helight1 });
+					$(".godele").click(function(){
+						$(".zyc").css({"display":"none"});
+					})
+					$(".contgoods").click(function(){
+						$(".zyc").css({"display":"none"});
+					})
+				}
+			})
 		})
 	})
-	
+	// $(".shop").click(function(){
+	// 	var helight1=document.body.clientHeight || document.documentElement.clientHeight;
+	// 	$(".zyc").css({"display":"block","height": helight1 });
+	// 	$(".godele").click(function(){
+	// 		$(".zyc").css({"display":"none"});
+	// 	})
+	// 	$(".contgoods").click(function(){
+	// 		$(".zyc").css({"display":"none"});
+	// 	})
+	// })
+	// 
 	$(".goodsli").mouseenter(function(){
 		$(this).css({"border-color":"#e6e6e6","border-bottom-color":"white"});
 		$(this).children(".listdiv").css({"border-color":"#e6e6e6","border-top-color":"white"});

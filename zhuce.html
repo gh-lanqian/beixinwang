@@ -15,11 +15,7 @@
 		<script type="text/javascript">
 			document.write(page1.import.body.innerHTML);
 		</script>
-		<!-- <div class="header"></div>
-		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript">
-			$(".header").load("head.html");
-		</script> -->
+		
 		<script type="text/javascript">
 			getI(".shoppingclass")[0].onmouseover=function(){
 				getI(".dc")[0].style.display="block";
@@ -65,17 +61,9 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var perimeters = window.location.search;
-			perimeters = decodeURI(perimeters.substr(1).split('&')[0]);
-			// alert(perimeters)
-			// function getDatas(userphone){
-			// 	$.post("php/text2.php", {userphone:userphone},
-			// 		function(str){
-			// 			alert(str);
-			// 		});
-			// }
+			var perimeters = window.location.search.split("=")[1];
 			window.onload=function(){
-				getI(".txtname")[0].value=perimeters.substr(10);
+				getI(".txtname")[0].value=perimeters
 			}
 			//前端验证
 			getI(".txt1")[0].onblur=function(){
@@ -135,24 +123,24 @@
 					alert("请同意并接受协议");
 					return;
 				}
-				afterText(getI(".txt1")[0],getI(".txtname")[0])
+				afterText(getI(".txtname")[0].value,getI(".txt1")[0].value)
 				
 			}
-			function afterText(userpass,userphone){
-				$.post("php/text1.php", {userpass:userpass,
-				userphone:userphone
+			function afterText(userphone,userpass){
+				$.post("php/text1.php", {userphone:userphone,
+				userpass:userpass
 				},
 				function(str){
 						if(str==1){
-							window.location.href="denglu.html";
+							window.location.href="zhucesucess.html";
 						}else{
 							 alert("注册失败！请重新输入内容");
 						}
-					});
+				})
 			}
 			function check(str,type){
 				switch(type){
-					case "userpass":var r =/\w{8,20}$/;break;
+					case "userpass":var r =/[0-9a-zA-Z$#]{8,20}$/;break;
 					case "userphone":var r =/^1[3-9]\d{9}$/;break;
 				}
 				return r.test(str);
@@ -221,8 +209,8 @@
 						<div class="txt-t">
 							<h2>北新网用户登录</h2>
 							<p>请输入用户名和密码</p>
-							<label>用户名：</label><input class="txt-t-ip" placeholder="请输入手机号" /><br/>
-							<label>密码：</label><input class="txt-t-ip" type="" placeholder="" /><br/>
+							<label>用户名：</label><input class="txt-t-ip tp" placeholder="请输入手机号" /><br/>
+							<label>密码：</label><input class="txt-t-ip" type="password" placeholder="" /><br/>
 							<input class="dl-dl" type="button" value="登录" /><a href="forgetpassword.html">忘记密码？</a><br/>
 						</div>
 						<div class="txt-b">
@@ -235,6 +223,22 @@
 			<div class="corver1"></div>
 		</div>
 		<script type="text/javascript">
+			// getI(".dl-dl")[0].onclick=function(){
+			// 	var userphone=getI(".tp")[0].value;
+			// 	var userpass=getI(".tpas")[0].value;
+			// 	$.post("php/login.php",{userphone:userphone,
+			// 	userpass:userpass
+			// 	},
+			// 	function(str){
+			// 		if(str==0){
+			// 			alert("用户名或密码不对，请重新登录")
+			// 		}else{
+			// 			saveCookie("userphone",getI(".tp")[0].value,7);
+			// 			saveCookie("userpass",getI(".tpas")[0].value,7);
+			// 			window.location.href="index.html";
+			// 		}
+			// 	});
+			// }
 			//点击登录显示
 			getI(".dd")[0].onclick=function(event){
 				var evt=window.event || event;

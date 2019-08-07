@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="js/$function.js"></script>
 		<script type="text/javascript" src="js/Mirror.js"></script>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="js/description.js"></script>
+		<script type="text/javascript" src="js/111.js"></script>
 		<link rel="import" href="head.html" id="page1"/>
 		<link rel="shortcut icon" href="img/bitbug_favicon.ico" /> 
 	</head>
@@ -36,29 +36,27 @@
 		
 		</div>
 		<script type="text/javascript">
-			var id=window.location.search.split("=")[1];
-			console.log(id)
+			// var id= window.location.href.split("?")[1].split("=")[1];
+			// var perimeters = window.location.search;
+			// console.log(id)
+			// var id=b0001
 			$.get("php/getGoodsInfo.php",{
-				goodsId:id},
+				goodsId:"b0001"},
 				function(data){
 					data=JSON.parse(data)
+					console.log(data)
+					console.log(data.beiyong6)
 					renderdescription(data)
 					dianji()
 					addmore()
-					mirror()
 				});
+			
+
+			
 		</script>
 		
 		<script type="text/javascript" src="js/ajaxpromise.js"></script>
 		<script type="text/javascript">
-			function mirror(){
-				getI(".nowimg")[0].onclick=function(){
-					new Mirror({
-						width:200,
-						height:200,
-					},getI(".backmirr")[0])
-				}
-			}
 			function addmore(){
 				function getDataa(pageIndex){
 					ajaxPromise({

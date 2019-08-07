@@ -2,15 +2,15 @@
 	header("content-type","text/html;charset=utf-8");
 	
 	//1接收数据
-	$userId = $_POST["userId"];
-	$userPass = $_POST["userPass"];
+	$userphone = $_POST["userphone"];
+	$userpass = $_POST["userpass"];
 	
 	//2、在数据库中查询
 	   //1)、建立连接，并选择数据库
 	   $con = mysql_connect("localhost","root","mypass");
-	   mysql_select_db("shop1701",$con);
+	   mysql_select_db("mydb0715",$con);
 	   //2)、执行SQL语句（查询）
-	   $sqlStr="select * from userTable where userId='".$userId."' and userPass='".$userPass."'";
+	   $sqlStr="select * from beixinvip where userphone='".$userphone."' and userpass='".$userpass."'";
 	   
 	   $result=mysql_query($sqlStr,$con);
 	   
@@ -22,9 +22,9 @@
 		
 	echo $rows;
 //	
-//	if($rows>0){//登录成功
-//		echo "1";	
-//	}else {//登录失败，返回0.
-//		echo "0";
-//	}	
+	if($rows>0){//登录成功
+		echo "1";	
+	}else {//登录失败，返回0.
+		echo "0";
+	}	
 ?>

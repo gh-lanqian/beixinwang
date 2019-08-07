@@ -619,20 +619,4 @@
 				imgs:["http://images.bxmedia.net/upload/1/2019/7/1/2/644fd-e72b-4f68-962c-e0f27f5212a.jpg","http://images.bxmedia.net/upload/259/2019/7/4/29/a4848-07eb-4770-86a7-2498093c2e1.jpg"]
 				},getI("#banner"),getI("#bannerz"))
 		}
-		
-		let userphone=getCookie("userphone");
-		if(userphone){
-			getI(".top")[0].children[0].innerHTML=`[<a href="" class="dl" style="color:red;">${userphone}</a>]您好，欢迎来到北新网-新华书店综合网购平台！<span>[<a href="" class="back">退出</a>]</span>`;
-		}else{
-			getI(".top")[0].children[0].innerHTML=`您好，欢迎来到北新网-新华书店综合网购平台！<span>[<a href="" class="dl">登录</a>]</span><span>[<a href="yanzheng.html">免费注册</a>]</span>`;
-		}
-		
-		getI(".back")[0].onclick=function(event){
-			let evt=window.event || event
-			evt.preventDefault();
-			saveCookie("userphone",userphone,-1);
-			window.location.href="index.html";
-		}
-		
-		
 </script>

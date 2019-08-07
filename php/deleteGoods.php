@@ -9,7 +9,7 @@
 	$conn = mysql_connect("localhost","root","mypass");
 	
 	//2）、选择数据库（找目的地）
-	if(!mysql_select_db("aoliao",$conn)){
+	if(!mysql_select_db("shoppingcenter",$conn)){
 		die("数据库选择失败".mysql_error());
 	}
 	

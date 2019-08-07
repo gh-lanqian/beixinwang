@@ -39,7 +39,6 @@ function renderdescription(str){
 							height: 555px;
 							float: left;">
 					<div class="backmirr" style="background: url(${str.goodsImg}) no-repeat;
-							background-size:auto 352px;
 							width: 420px;
 							height: 420px;
 							border: #f2f2f2 1px solid;"></div>
@@ -63,7 +62,7 @@ function renderdescription(str){
 									width: 58px;
 									height: 58px;
 									border: #ed1f23 2px solid;
-									text-align: center;"><img src="${str.goodsImg}" alt="" style="height: 58px;"></span></div>
+									text-align: center;"><img src="http://images.bxmedia.net/upload/1/2016/4/10/92/27f1b-a0e0-48b1-b951-4e41e913afe_58X58.jpg" alt=""></span></div>
 						<div class="anni rr" style="float: left;
 									width: 10px;
 									height: 46px;

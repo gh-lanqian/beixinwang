@@ -12,7 +12,7 @@
 	//2)选择数据库
 	mysql_select_db("mydb0715",$con);
 	//3)执行SQL语句
-	$sqlstr="insert into beixinvip (userphone，userpass) values('$userphone','$userpass')";
+	$sqlstr="insert into beixinvip (userphone,userpass) values('$userphone','$userpass')";
 	$result = mysql_query($sqlstr);
 	
 	//4)关闭数据库
