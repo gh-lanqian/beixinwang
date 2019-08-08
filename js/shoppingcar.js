@@ -62,6 +62,7 @@ function rendersplist(str){
 									padding: 1px;
 									margin: 0px 10px;"><img src="${str[i].goodsImg}" alt="" width="50px" height="50px"></a>
 						<span style="color: #2652A5;cursor: pointer;">${str[i].goodsName}</span>
+						<input type="text" class="goodsId" value="${str[i].goodsId}" style="display:none;">
 					</div>
 					<div class="numc" style="width: 100px;
 									float: left;
@@ -73,7 +74,7 @@ function rendersplist(str){
 									margin-right: 3px;
 									float: left;
 									border: 1px solid #a7a6ac;
-									outline: none;" class="shuru">
+									outline: none;" class="shuru" index=${i}>
 						<span style="cursor: pointer;">
 							<img src="http://www.bxmedia.net/template/bdw/statics/images/100.png" alt="" class="jia">
 							<img src="http://www.bxmedia.net/template/bdw/statics/images/101.png" alt="" class="jian">

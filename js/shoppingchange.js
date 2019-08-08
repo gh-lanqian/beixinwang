@@ -48,6 +48,13 @@ function changeCar(str){
 		//数量
 		var num=$(this).parents("span").prev().val();
 		num++
+		
+		//数据库改变数据
+		var vipName=getCookie("userphone");
+		var goodsId=$(this).parents(".details").find(".goodsId").val();
+		var goodsCount=num;
+		shangenum(vipName,goodsId,goodsCount)
+		
 		$(this).parents("span").prev().val(num)
 		//小计
 		var p=$(this).parents(".numc").siblings(".pricec").html()
@@ -62,7 +69,15 @@ function changeCar(str){
 		//数量
 		var num=$(this).parents("span").prev().val();
 		num--
+		
+		//数据库改变数据
+		var vipName=getCookie("userphone");
+		var goodsId=$(this).parents(".details").find(".goodsId").val();
+		var goodsCount=num;
+		shangenum(vipName,goodsId,goodsCount)
+		
 		$(this).parents("span").prev().val(num)
+
 		if(num<1){
 			num=1
 			$(this).parents("span").prev().val(num)
@@ -77,6 +92,11 @@ function changeCar(str){
 	})
 	//文本框输入
 	$(".shuru").change(function(){
+		//数据库改变数据
+		var vipName=getCookie("userphone");
+		var goodsId=$(this).parents(".details").find(".goodsId").val();
+		var goodsCount=$(this).val();
+		shangenum(vipName,goodsId,goodsCount)
 		//小计
 		var n=$(this).val()
 		var p=$(this).parents(".numc").siblings(".pricec").html()
@@ -87,33 +107,45 @@ function changeCar(str){
 	})
 	//点击删除
 	$(".operationc").click(function(evevt){
-		showq()
-		$(".qqq").click(()=>{
-			ajaxdelete(str)
-			$(this).parents(".details").remove();
-			$(".order").each(function(i,ele){
-				var leng1=$(ele).find(".checkpre").length;
-				if(leng1==0){
-					$(ele).remove();
-				}
+			showq()
+			$(".qqq").click(()=>{
+				//数据库删除
+				var vipName=getCookie("userphone");
+				var goodsId=$(this).parents(".details").find(".goodsId").val();
+				ajaxdelete(vipName,goodsId)
+				//页面删除
+				$(this).parents(".details").remove();
+				$(".order").each(function(i,ele){
+					var leng1=$(ele).find(".checkpre").length;
+					if(leng1==0){
+						$(ele).remove();
+					}
+				})
+				$(".cart").each(function(i,ele){
+					var leng=$(ele).find(".order").length;
+					if(leng==0){
+						$(ele).css("display","none");
+						$(".total").css("display","none");
+						$(".nogoods").css("display","block");
+					}
+				})
+				$(".zycc").css("display","none")
+				getSum()
 			})
-			$(".cart").each(function(i,ele){
-				var leng=$(ele).find(".order").length;
-				if(leng==0){
-					$(ele).css("display","none");
-					$(".total").css("display","none");
-					$(".nogoods").css("display","block");
-				}
-			})
-			$(".zycc").css("display","none")
-			getSum()
-		})
+
 	})
 	//批量删除
 	$(".plsc").click(function(){
 		showq()
 		$(".qqq").click(()=>{
-			ajaxdelete(str)
+			//数据库删除
+			var vipName=getCookie("userphone");
+			$(".checkpre:checked").each(function(i,ele){
+				var goodsId=$(ele).parents(".details").find(".goodsId").val();
+				ajaxdelete(vipName,goodsId)
+			})
+			
+			//页面删除
 			$(".checkpre:checked").parents(".details").remove();
 			$(".order").each(function(i,ele){
 				var length2=$(ele).find(".checkpre:checked").length;
@@ -160,7 +192,35 @@ function changeCar(str){
 			$(document).unbind("mousemove")
 		})
 	}
-	//总计模块
+	
+}
+//数据库删除数据
+function ajaxdelete(vipName,goodsId){
+		$.get("php/deleteGoods.php",{vipName:vipName,
+		goodsId:goodsId
+		})
+}
+//数据库修改数量
+function shangenum(vipName,goodsId,goodsCount){
+	$.get("php/updateGoodsCount.php",{vipName:vipName,
+	goodsId:goodsId,goodsCount:goodsCount
+	},
+	function(){
+		
+	}
+	)
+}
+//小计
+function loadxiaoji(){
+	$(".jian").each(function(i,ele){
+		var p=$(ele).parents(".numc").siblings(".pricec").html()
+		var num=$(ele).parents(".numc").find(".shuru").val()
+		var total=(num*p).toFixed(1)
+		$(ele).parents(".numc").siblings(".subtotalc").html("￥"+total)
+	})
+}
+
+//总计模块
 	function getSum(){
 		var count=0;
 		var money=0;
@@ -177,22 +237,3 @@ function changeCar(str){
 		//积分总计
 		$(".zjjf").text(parseInt(money).toFixed(1));
 	}
-}
-
-function ajaxdelete(str){
-	var vipName=getCookie("userphone");
-	$(".checkpre").each(function(i,ele){
-		var goodsId=str[i].goodsId;
-		$.get("php/deleteGoods.php",{vipName:vipName,
-		goodsId:goodsId
-		},
-		function(str){
-			if(str==1){
-				alert("删除成功")
-			}
-		})
-	})
-	
-	
-	
-}

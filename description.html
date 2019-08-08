@@ -35,9 +35,31 @@
 		<div class="des-z">
 		
 		</div>
+		<div class="zyc">
+			<div class="gocar">
+				<div class="gocar-bg">
+					<div class="gocarMore">
+						<div class="more-top">
+							<i>温馨提示</i>
+							<span class="godele"><img src="http://www.bxmedia.net/template/bdw/statics/images/wxts-btn.png" alt=""></span>
+						</div>
+						<div class="more-bottom">
+							<div class="m-left">
+								<img src="http://www.bxmedia.net/template/bdw/statics/images/wxts-img1.png" alt="">
+							</div>
+							<div class="m-right">
+								<p class="adds">商品已成功添加到购物车！</p>
+								<p class="adds-num">购物车共<span>2</span>件商品</p>
+								<a href="shoppingcar.html" class="mongo">去购物车结算</a>
+								<span class="contgoods">继续购物</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script type="text/javascript">
 			var id=window.location.search.split("=")[1];
-			console.log(id)
 			$.get("php/getGoodsInfo.php",{
 				goodsId:id},
 				function(data){
@@ -46,7 +68,61 @@
 					dianji()
 					addmore()
 					mirror()
+					changebooknum()
+					addbook()
 				});
+			function addbook(){
+				$(".addbook").click(function(){
+					var userphone=getCookie("userphone");
+					// console.log(userphone)
+					var goodsId=id
+					console.log(goodsId)
+					var goodsCount=$(".booknum").val()
+					console.log(goodsCount)
+					$.get("php/addShoppingCart.php",{vipName:userphone,
+					goodsId:goodsId,goodsCount:goodsCount
+					},
+					function(str){
+						if(str==0){
+							alert("加入购物车失败")
+						}else{
+							var helight1=document.body.clientHeight || document.documentElement.clientHeight;
+							$(".zyc").css({"display":"block","height": helight1 });
+							$(".godele").click(function(){
+								$(".zyc").css({"display":"none"});
+							})
+							$(".contgoods").click(function(){
+								$(".zyc").css({"display":"none"});
+							})
+						}
+					})
+				})
+			}	
+			
+			function changebooknum(){
+				//点击加
+				$(".lab2").click(function(){
+					//数量
+					var num=$(this).siblings(".booknum").val();
+					num++
+					
+					$(this).siblings(".booknum").val(num)
+				})
+				//点击减
+				$(".lab1").click(function(){
+					//数量
+					var num=$(this).siblings(".booknum").val();
+					num--
+					$(this).siblings(".booknum").val(num)
+				
+					if(num<1){
+						num=1
+						$(this).siblings(".booknum").val(num)
+						$(this).css("cursor","not-allowed")
+					}
+				})
+			}
+				
 		</script>
 		
 		<script type="text/javascript" src="js/ajaxpromise.js"></script>
@@ -142,6 +218,7 @@
 				}
 			
 		</script>
+		
 			<!-- foot -->
 		<div class="foot"></div>
 		<script type="text/javascript">

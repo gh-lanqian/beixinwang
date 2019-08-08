@@ -179,7 +179,7 @@ function renderdescription(str){
 										line-height: 20px;
 										margin: 0 1px;
 										vertical-align: middle;
-										outline: none;">
+										outline: none;" class="booknum">
 							<label class="lab2" style="display: inline-block;
 										width: 22px;
 										height: 22px;
@@ -200,7 +200,7 @@ function renderdescription(str){
 							<span style="display: inline-block;
 						background: url(http://www.bxmedia.net/template/bdw/statics/images/de_icon13.png) no-repeat;
 									width: 141px;
-									height: 43px;"></span>
+									height: 43px;" class="addbook"></span>
 						</div>
 					</div>
 				</div>

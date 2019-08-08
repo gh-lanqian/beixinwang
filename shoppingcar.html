@@ -31,7 +31,7 @@
 				getI(".dc")[0].style.display="none";
 			}
 		</script>
-		<div class="cart" >
+		<div class="cart" style="display: none;" >
 			<ul class="nav">
 				<li class="nowli">1.查看购物车</li>
 				<li class="everyli">2.填写订单信息</li>
@@ -62,6 +62,7 @@
 						<input type="checkbox" class="checkpre">
 						<a href="" ><img src="http://images.bxmedia.net/upload/1/2017/2/7/42/28848-3f8a-47d9-b346-82aef840720_50X50.jpg" alt="" width="50px" height="50px"></a>
 						<span >查令十字街84号-[珍藏版]</span>
+						<input type="text" class="goodsId" value="1111">
 					</div>
 					<div class="numc" >
 						<input type="text" value="1" class="shuru">
@@ -93,7 +94,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="total">
+		<div class="total" style="display: none;">
 			<div class="total-left">
 				<input type="checkbox" class="zcheckall" checked="checked">
 				<label>全选</label>
@@ -114,16 +115,49 @@
 			</ul>
 			<img src="http://www.bxmedia.net/template/bdw/statics/images/kgwc01.png" alt="" class="shop3">
 		</div>
+		
 		<script type="text/javascript">
+			
 			var vipName=getCookie("userphone");
 			$.get("php/getShoppingCart.php",{vipName:vipName
 			},
 			function(data){
 				data=JSON.parse(data)
-				rendersplist(data)
+				if(data!=''){
+					$(".cart").show()
+					$(".total").show()
+					rendersplist(data)
+					addcount()
+				}else{
+					$(".nogoods").show()
+				}
 				changeCar(data)
 			})
-		
+		function addcount(){
+			var vipName=getCookie("userphone");
+			$(".checkpre").each(function(i,ele){
+				var goodsId=$(ele).parents(".details").find(".goodsId").val();
+				// console.log(i)
+
+				var index=$(ele).parents(".details").find(".shuru").attr("index");
+				// console.log(index)
+				$.get("php/getcount.php",{vipName:vipName,
+				goodsId:goodsId,index:index
+				},
+				function(data){
+					var index=data.slice(0,1)
+					// console.log(index)
+					data=data.slice(1)
+					data=JSON.parse(data)
+					// console.log(data)
+					$(`.shuru[index=${index}]`).val(data.goodsCount);
+					loadxiaoji()
+					getSum()
+
+				})
+			})
+			
+		}
 		</script>
 			<!-- foot -->
 		<div class="foot"></div>
